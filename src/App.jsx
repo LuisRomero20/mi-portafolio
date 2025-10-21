@@ -4,82 +4,89 @@ import { Database, Server, Rocket, Mail, Github, Linkedin, Cpu, Cloud, BarChart3
 
 // ====== EDITA ESTOS DATOS Y PUBLICA ======
 const PROFILE = {
-  name: "Yojhan Padilla Inga",
-  role: "Ingeniero de Sistemas — Backend & Data Engineer",
+  name: "Luis Jesús Romero Castro",
+  role: "Ingeniero de Datos — Backend",
   about:
-    "Construyo pipelines de datos robustos y APIs backend de alto rendimiento. Me enfoco en escalabilidad, observabilidad y simplicidad operativa.",
+    "Ingeniero de Sistemas con enfoque en operación y confiabilidad de datos. Diseño pipelines sobre Spark/HDFS, orquesto procesos en Control‑M y habilito consumo analítico con gobierno y calidad.",
   location: "Lima, Perú",
-  email: "tucorreo@dominio.com",
-  github: "https://github.com/tuusuario",
-  linkedin: "https://www.linkedin.com/in/tuusuario/",
-  availability: "Disponible para proyectos y roles full‑time/remoto",
+  email: "luis_jesusrc@hotmail.com",
+  github: "https://github.com/LuisRomero20",
+  linkedin: "https://www.linkedin.com/in/luisjesusromerocastro/",
+  availability: "Abierto a oportunidades Data/Backend (remoto/híbrido)",
 };
 
 const SKILLS = [
-  "Python", "SQL", "Bash", "Git", "Docker", "Kubernetes",
-  "Airflow", "dbt", "Spark", "Kafka",
-  "FastAPI", "Django", "PostgreSQL", "BigQuery",
-  "AWS (S3, Lambda, ECS)", "GCP (GCS, Dataflow)",
-  "CI/CD", "Observabilidad (Prometheus, Grafana)",
+  "Python", "Scala", "SQL",
+  "Spark", "HDFS", "Dataproc",
+  "Control-M", "Argos Live",
+  "Power BI", "Git", "Bitbucket", "SSH",
+  "Scrum/Agile",
 ];
 
 const METRICS = [
-  { label: "Años de experiencia", value: 4 },
-  { label: "Proyectos productivos", value: 18 },
-  { label: "TB procesados/mes", value: 6 },
-  { label: "SLAs cumplidos", value: "99.9%" },
+  { label: "Años de experiencia", value: "2+" },
+  { label: "Proyectos BI/ETL", value: "10+" },
+  { label: "Ambientes", value: "Finanzas y minería" },
+  { label: "Disponibilidad", value: "Inmediata" },
 ];
 
 const EXPERIENCE = [
   {
-    company: "Acme Retail",
-    role: "Data Engineer",
-    period: "2023 — 2025",
+    company: "Indra / Minsait (BBVA)",
+    role: "Ingeniero de Datos",
+    period: "2025 — Actualidad",
     bullets: [
-      "Orquesté pipelines en Airflow para ingestión batch y streaming (Kafka → S3 → Spark).",
-      "Implementé modelado con dbt y métricas BI en BigQuery (costos ↓ 27%).",
-      "Creé capa de APIs con FastAPI para servir features a ciencia de datos.",
+      "Orquestación y operación de procesos en Control‑M con monitoreo en Argos Live.",
+      "Ingestas y traspasos sobre HDFS bajo enfoque Data Mesh (calidad y gobierno con Hammurabi).",
+      "Análisis de incidencias y optimización de logs; soporte a SLAs y continuidad operativa.",
     ],
   },
   {
-    company: "FinServ Latam",
-    role: "Backend Engineer",
-    period: "2021 — 2023",
+    company: "Renova SAC (Minería)",
+    role: "Ingeniero de Sistemas de TI",
+    period: "2023 — 2025",
     bullets: [
-      "Diseñé microservicios en Python + PostgreSQL con pruebas y despliegue CI/CD.",
-      "Aumenté throughput 2.3× optimizando consultas y caching.",
-      "Instrumenté logs/traces con OpenTelemetry + Grafana.",
+      "Dashboards en Power BI para inventarios y procesos; automatización de reportes con Excel/VBA.",
+      "Gestión de infraestructura: WSUS, backups, seguridad y redes para continuidad de datos.",
+      "Soporte a operaciones en mina; ETL con SQL y documentación operativa.",
+    ],
+  },
+  {
+    company: "2M MICON",
+    role: "Desarrollador Web Jr (Prácticas)",
+    period: "2023",
+    bullets: [
+      "Optimización de landing pages (SEO, rendimiento) y métricas con Google Analytics.",
     ],
   },
 ];
 
 const PROJECTS = [
   {
-    title: "Data Lakehouse de Retail",
-    tags: ["Data", "Airflow", "dbt", "Spark", "GCP"],
+    title: "ETL Spark en Dataproc/HDFS",
+    tags: ["Data", "Spark", "HDFS", "GCP", "Control-M"],
     summary:
-      "Arquitectura medallion (bronze/silver/gold) con orquestación en Airflow y modelado en dbt; dashboards en Looker.",
+      "Pipeline batch con Spark (Py/Scala) sobre HDFS; orquestación en Control‑M, validaciones y logging. Diseño pensado para ambientes regulados.",
     links: [
-      { href: "https://github.com/tuusuario/proyecto-lakehouse", label: "Código" },
-      { href: "https://demo.example.com", label: "Demo" },
+      { href: "https://github.com/LuisRomero20/spark-etl-template", label: "Código" },
     ],
   },
   {
-    title: "API de Features en Tiempo Real",
-    tags: ["Backend", "FastAPI", "Kafka", "Redis"],
+    title: "Observabilidad de Jobs",
+    tags: ["Data", "Operación", "Control-M", "Monitoring"],
     summary:
-      "Servicio de bajas latencias para features ML con colas Kafka y caching Redis; p95 < 40 ms.",
+      "Extracción de ejecuciones de Control‑M y bitácora de runs (duración, status, reintentos, SLAs) con export para BI.",
     links: [
-      { href: "https://github.com/tuusuario/feature-api", label: "Código" },
+      { href: "https://github.com/LuisRomero20/ops-monitoring-controlm", label: "Código" },
     ],
   },
   {
-    title: "ETL Financiero con Calidad de Datos",
-    tags: ["Data", "Great Expectations", "PostgreSQL"],
+    title: "BI Operativo (Inventarios)",
+    tags: ["BI", "Power BI", "SQL"],
     summary:
-      "Pipeline ETL con validaciones automáticas y reportes de calidad; cobertura de tests 92%.",
+      "Modelo semántico y dashboards de operación (mock data); ETL con SQL y reglas básicas de calidad.",
     links: [
-      { href: "https://github.com/tuusuario/etl-finanzas", label: "Código" },
+      { href: "https://github.com/LuisRomero20/bi-inventarios", label: "Código" },
     ],
   },
 ];
@@ -100,7 +107,7 @@ export default function Portfolio() {
         <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2 font-semibold tracking-tight">
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-neutral-800"><Cpu size={16} /></span>
-            <span>Y. Padilla • Backend & Data</span>
+            <span>L. Romero • Backend & Data</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
             <a className="px-3 py-1.5 rounded-xl hover:bg-neutral-800" href="#proyectos">Proyectos</a>
@@ -111,7 +118,7 @@ export default function Portfolio() {
       </header>
 
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
+      <section className="max-w-5xl xl:max-w-6xl mx-auto px-4 py-12 md:py-16">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -119,7 +126,7 @@ export default function Portfolio() {
           className="grid md:grid-cols-2 gap-8 items-center"
         >
           <div className="space-y-5">
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-3xl md:text-5xl 2xl:text-6xl font-bold leading-tight">
               {PROFILE.role}
             </h1>
             <p className="text-neutral-300 max-w-prose">{PROFILE.about}</p>
@@ -133,10 +140,10 @@ export default function Portfolio() {
               <a href={`mailto:${PROFILE.email}`} className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-white text-neutral-900 font-medium hover:opacity-90">
                 <Mail size={16}/> Contáctame
               </a>
-              <a href={PROFILE.github} target="_blank" className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-neutral-800 hover:bg-neutral-700">
+              <a href={PROFILE.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-neutral-800 hover:bg-neutral-700">
                 <Github size={16}/> GitHub
               </a>
-              <a href={PROFILE.linkedin} target="_blank" className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-neutral-800 hover:bg-neutral-700">
+              <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-neutral-800 hover:bg-neutral-700">
                 <Linkedin size={16}/> LinkedIn
               </a>
               <span className="text-sm text-neutral-400">{PROFILE.availability}</span>
@@ -176,7 +183,7 @@ export default function Portfolio() {
             <h2 className="text-2xl md:text-3xl font-bold">Proyectos clave</h2>
             <p className="text-neutral-400 text-sm">Filtra por tipo para ver lo más relevante.</p>
           </div>
-          <div className="flex gap-2 overflow-x-auto py-1">
+          <div className="flex flex-wrap gap-2 py-1">
             {tagSet.map(t => (
               <button
                 key={t}
@@ -212,7 +219,7 @@ export default function Portfolio() {
               </div>
               <div className="flex gap-2 mt-4">
                 {p.links?.map(l => (
-                  <a key={l.href} href={l.href} target="_blank" className="inline-flex items-center gap-1 text-sm px-3 py-1.5 rounded-xl bg-neutral-800 hover:bg-neutral-700">
+                  <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm px-3 py-1.5 rounded-xl bg-neutral-800 hover:bg-neutral-700">
                     <ExternalLink size={14}/>{l.label}
                   </a>
                 ))}
@@ -249,10 +256,10 @@ export default function Portfolio() {
             <a href={`mailto:${PROFILE.email}`} className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-white text-neutral-900 font-medium hover:opacity-90">
               <Mail size={16}/> {PROFILE.email}
             </a>
-            <a href={PROFILE.github} target="_blank" className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-neutral-800 hover:bg-neutral-700">
+            <a href={PROFILE.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-neutral-800 hover:bg-neutral-700">
               <Github size={16}/> GitHub
             </a>
-            <a href={PROFILE.linkedin} target="_blank" className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-neutral-800 hover:bg-neutral-700">
+            <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-neutral-800 hover:bg-neutral-700">
               <Linkedin size={16}/> LinkedIn
             </a>
           </div>
