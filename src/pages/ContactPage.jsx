@@ -1,11 +1,45 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function ContactPage() {
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí puedes integrar el backend para enviar el correo
-    alert("¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.");
+    
+    // 🔴 PASO FINAL: Reemplaza esta URL con el link que te dé Formspree
+    const FORMSPREE_URL = "https://formspree.io/f/TU_ID_AQUI";
+
+    if (FORMSPREE_URL.includes("TU_ID_AQUI")) {
+      alert("⚠️ Falta configurar Formspree: Debes pegar tu enlace de Formspree en el código para que los correos te lleguen.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        alert("¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.");
+        form.reset();
+      } else {
+        alert("Oops! Hubo un problema al enviar tu mensaje.");
+      }
+    } catch (error) {
+      alert("Error de red. Por favor revisa tu conexión a internet.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -135,9 +169,10 @@ export default function ContactPage() {
               <div className="text-center pt-4">
                 <button
                   type="submit"
-                  className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg hover:shadow-blue-500/30"
+                  disabled={isSubmitting}
+                  className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg hover:shadow-blue-500/30 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
-                  Send Message
+                  {isSubmitting ? "Enviando..." : "Send Message"}
                 </button>
               </div>
             </form>
