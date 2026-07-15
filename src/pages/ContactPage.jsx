@@ -68,12 +68,10 @@ export default function ContactPage() {
             </div>
 
             {/* Google Maps (Lima, Peru) */}
-            <div className="w-full h-64 rounded-lg overflow-hidden border border-[#1e293b] flex-grow">
+            <div className="w-full flex-1 min-h-[250px] rounded-lg overflow-hidden border border-[#1e293b]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124869.60105315842!2d-77.10860589635791!3d-12.043328225575514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec3%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1sen!2spe!4v1700000000000!5m2!1sen!2spe"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
+                className="w-full h-full border-0"
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
