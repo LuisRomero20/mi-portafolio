@@ -9,7 +9,7 @@ export default function ContactPage() {
     e.preventDefault();
     
     // 🔴 PASO FINAL: Reemplaza esta URL con el link que te dé Formspree
-    const FORMSPREE_URL = "https://formspree.io/f/TU_ID_AQUI";
+    const FORMSPREE_URL = "https://formspree.io/f/xykrkkpo";
 
     if (FORMSPREE_URL.includes("TU_ID_AQUI")) {
       alert("⚠️ Falta configurar Formspree: Debes pegar tu enlace de Formspree en el código para que los correos te lleguen.");
