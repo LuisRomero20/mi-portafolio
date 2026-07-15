@@ -33,7 +33,7 @@ function MainContent() {
 
 function App() {
   return (
-    <Router basename="/mi-portafolio/">
+    <Router>
       <Sidebar />
       <main className="xl:ml-[300px] min-h-screen transition-all duration-300">
         <Routes>
