@@ -86,7 +86,7 @@ export default function Sidebar() {
       <aside
         className={`fixed top-0 left-0 h-screen w-[300px] bg-[#040b14] text-white z-[50] flex flex-col transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full xl:translate-x-0'
-        } overflow-y-auto`}
+        } overflow-y-auto scrollbar-hide`}
       >
         {/* Profile Section */}
         <div className="flex flex-col items-center pt-10 pb-6 px-6">
