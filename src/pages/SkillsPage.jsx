@@ -17,7 +17,7 @@ export default function SkillsPage() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">Skills Funcionales y Técnicas</h2>
+          <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">Habilidades Funcionales y Técnicas</h2>
           <div className="w-16 h-1 bg-blue-500 mb-6"></div>
           <p className="text-[var(--color-muted)] text-lg">
             Experiencia comprobada en la construcción de ecosistemas de datos escalables, seguros y alineados a las exigencias corporativas de la alta banca y la industria.

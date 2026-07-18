@@ -26,7 +26,7 @@ export default function ProjectsPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <h1 className="text-4xl font-bold text-white mb-4">Portfolio</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">Portafolio</h1>
           <p className="text-[var(--color-muted)] text-lg max-w-3xl">
             Explora mis trabajos más recientes en desarrollo de software, ciencia de datos, investigaciones académicas y fotografía profesional.
           </p>

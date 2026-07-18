@@ -12,7 +12,7 @@ export default function ResumePage() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">Resume</h2>
+          <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">Resumen</h2>
           <div className="w-16 h-1 bg-blue-500 mb-6"></div>
           <p className="text-[var(--color-muted)] text-lg">
             Transformando operaciones empresariales complejas en soluciones automatizadas, gobernadas y eficientes mediante tecnología de vanguardia.
@@ -26,7 +26,7 @@ export default function ResumePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-white mb-6 uppercase">Summary</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 uppercase">Perfil Profesional</h3>
             <div className="border-l-2 border-blue-500 pl-6 relative mb-12">
               <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#040b14] border-2 border-blue-500"></div>
               <h4 className="text-xl font-bold text-blue-500 uppercase mb-2">Luis Jesus Romero Castro</h4>
@@ -40,7 +40,7 @@ export default function ResumePage() {
               </ul>
             </div>
 
-            <h3 className="text-2xl font-bold text-white mb-6 uppercase">Education</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 uppercase">Educación</h3>
             
             <div className="border-l-2 border-blue-500 pl-6 relative mb-8">
               <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#040b14] border-2 border-blue-500"></div>
@@ -59,7 +59,7 @@ export default function ResumePage() {
               <p className="text-white italic mb-2">Instituto Cultural Peruano Norteamericano (ICPNA)</p>
             </div>
 
-            <h3 className="text-2xl font-bold text-white mb-6 uppercase">Certifications & Global Institutions</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 uppercase">Certificaciones e Instituciones Globales</h3>
             
             <div className="border-l-2 border-blue-500 pl-6 relative mb-8">
               <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#040b14] border-2 border-blue-500"></div>
@@ -81,7 +81,7 @@ export default function ResumePage() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-white mb-6 uppercase">Professional Experience</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 uppercase">Experiencia Profesional</h3>
             
             <div className="border-l-2 border-blue-500 pl-6 relative mb-8">
               <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#040b14] border-2 border-blue-500"></div>

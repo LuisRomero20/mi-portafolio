@@ -16,9 +16,9 @@ export default function Sidebar() {
 
   const navLinks = [
     { id: "home", label: "Inicio", icon: <Home size={20} /> },
-    { id: "about", label: "About", icon: <User size={20} /> },
-    { id: "resume", label: "Resume", icon: <FileText size={20} /> },
-    { id: "skills", label: "Skills", icon: <Code size={20} /> },
+    { id: "about", label: "Sobre mí", icon: <User size={20} /> },
+    { id: "resume", label: "Resumen", icon: <FileText size={20} /> },
+    { id: "skills", label: "Habilidades", icon: <Code size={20} /> },
     { id: "projects", label: "Proyectos", icon: <Briefcase size={20} /> },
     { id: "services", label: "Servicios", icon: <Layers size={20} /> },
     { id: "certifications", label: "Certificaciones", icon: <Award size={20} /> },
