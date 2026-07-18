@@ -9,8 +9,7 @@ import ProjectDetailPage from "./pages/ProjectDetailPage";
 import SkillsPage from "./pages/SkillsPage";
 import CertificationsPage from "./pages/CertificationsPage";
 import BlogPage from "./pages/BlogPage";
-import TestimonialsPage from "./pages/TestimonialsPage";
-import RecognitionsPage from "./pages/RecognitionsPage";
+import RecommendationsPage from "./pages/RecommendationsPage";
 import ContactPage from "./pages/ContactPage";
 import "./App.css";
 
@@ -24,9 +23,8 @@ function MainContent() {
       <section id="skills"><SkillsPage /></section>
       <section id="projects" className="bg-[#1e293b]"><ProjectsPage /></section>
       <section id="certifications"><CertificationsPage /></section>
-      <section id="testimonials" className="bg-[#1e293b]"><TestimonialsPage /></section>
-      <section id="recognitions"><RecognitionsPage /></section>
-      <section id="contact" className="bg-[#1e293b]"><ContactPage /></section>
+      <section id="recommendations" className="bg-[#1e293b]"><RecommendationsPage /></section>
+      <section id="contact"><ContactPage /></section>
     </>
   );
 }

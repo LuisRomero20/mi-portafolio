@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, FileText, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">Contact</h2>
+          <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">Contacto</h2>
           <div className="w-16 h-1 bg-blue-500 mb-6"></div>
           <p className="text-[var(--color-muted)] text-lg">
             ¿Tienes alguna consulta o propuesta? Envíame un mensaje y te responderé a la brevedad.
@@ -75,7 +75,7 @@ export default function ContactPage() {
                   <MapPin size={24} className="text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Address</h3>
+                  <h3 className="text-xl font-bold text-white mb-1">Dirección</h3>
                   <p className="text-[var(--color-muted)]">Lima, Perú</p>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function ContactPage() {
                   <Phone size={24} className="text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Call Us</h3>
+                  <h3 className="text-xl font-bold text-white mb-1">Teléfono</h3>
                   <p className="text-[var(--color-muted)]">+51 907 362 779</p>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   <Mail size={24} className="text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Email Us</h3>
+                  <h3 className="text-xl font-bold text-white mb-1">Correo Electrónico</h3>
                   <p className="text-[var(--color-muted)] break-all">luis_jesusrc@hotmail.com</p>
                 </div>
               </div>
@@ -111,6 +111,22 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
+
+            {/* Descargar CV */}
+            <div className="mt-8 p-6 bg-[#1e293b]/50 border border-slate-700 rounded-lg text-center">
+              <FileText className="mx-auto text-blue-500 mb-3" size={32} />
+              <h3 className="text-lg font-bold text-white mb-2">Curriculum Vitae</h3>
+              <p className="text-slate-400 text-sm mb-4">Descarga mi CV para revisar mi experiencia y habilidades a detalle.</p>
+              <a
+                href={`${import.meta.env.BASE_URL}papers/CV-LUISROMEROCASTRO.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-colors shadow-lg shadow-blue-500/20"
+              >
+                <Download size={18} />
+                <span>Descargar CV</span>
+              </a>
+            </div>
           </motion.div>
 
           {/* Columna Derecha - Formulario */}
@@ -123,7 +139,7 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">Tu Nombre</label>
                   <input
                     type="text"
                     id="name"
@@ -133,7 +149,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">Your Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">Tu Correo</label>
                   <input
                     type="email"
                     id="email"
@@ -145,7 +161,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">Subject</label>
+                <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">Asunto</label>
                 <input
                   type="text"
                   id="subject"
@@ -156,7 +172,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">Mensaje</label>
                 <textarea
                   id="message"
                   name="message"
@@ -172,7 +188,7 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg hover:shadow-blue-500/30 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
-                  {isSubmitting ? "Enviando..." : "Send Message"}
+                  {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
                 </button>
               </div>
             </form>

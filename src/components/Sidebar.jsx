@@ -22,8 +22,7 @@ export default function Sidebar() {
     { id: "projects", label: "Proyectos", icon: <Briefcase size={20} /> },
     { id: "services", label: "Servicios", icon: <Layers size={20} /> },
     { id: "certifications", label: "Certificaciones", icon: <Award size={20} /> },
-    { id: "testimonials", label: "Testimonios", icon: <MessageSquare size={20} /> },
-    { id: "recognitions", label: "Reconocimientos", icon: <Trophy size={20} /> },
+    { id: "recommendations", label: "Testimonios y Reconocimientos", icon: <Trophy size={20} /> },
     { id: "contact", label: "Contacto", icon: <Mail size={20} /> },
   ];
 
@@ -42,7 +41,7 @@ export default function Sidebar() {
       },
       {
         root: null,
-        rootMargin: "-20% 0px -60% 0px", // Ajuste para detectar la sección cuando está en la mitad de la pantalla
+        rootMargin: "-50% 0px -49% 0px", // Detecta cuando la sección cruza la mitad exacta de la pantalla
       }
     );
 
@@ -118,7 +117,10 @@ export default function Sidebar() {
                 <li key={link.id}>
                   <a
                     href={`#${link.id}`}
-                    onClick={closeSidebar}
+                    onClick={() => {
+                      closeSidebar();
+                      setActiveSection(link.id);
+                    }}
                     className={`flex items-center gap-4 px-4 py-3 rounded-lg transition-all duration-300 ${
                       isActive
                         ? "text-white bg-blue-500/10 border-l-4 border-blue-500"
