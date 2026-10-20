@@ -1,200 +1,99 @@
-import { MapPin, Phone, Mail, FileText, Download } from "lucide-react";
-import { motion } from "framer-motion";
 import { useState } from "react";
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
+import { motion as Motion } from "framer-motion";
+import SectionIntro from "../components/SectionIntro";
+import { profile } from "../data/profile";
 
 export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState("idle");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    // 🔴 PASO FINAL: Reemplaza esta URL con el link que te dé Formspree
-    const FORMSPREE_URL = "https://formspree.io/f/xykrkkpo";
-
-    if (FORMSPREE_URL.includes("TU_ID_AQUI")) {
-      alert("⚠️ Falta configurar Formspree: Debes pegar tu enlace de Formspree en el código para que los correos te lleguen.");
-      return;
-    }
-
-    setIsSubmitting(true);
-    const form = e.target;
-    const formData = new FormData(form);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus("sending");
 
     try {
-      const response = await fetch(FORMSPREE_URL, {
+      const response = await fetch("https://formspree.io/f/xykrkkpo", {
         method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
       });
 
-      if (response.ok) {
-        alert("¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.");
-        form.reset();
-      } else {
-        alert("Oops! Hubo un problema al enviar tu mensaje.");
-      }
-    } catch (error) {
-      alert("Error de red. Por favor revisa tu conexión a internet.");
-    } finally {
-      setIsSubmitting(false);
+      if (!response.ok) throw new Error("No se pudo enviar el formulario");
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
     }
   };
 
   return (
-    <div className="py-24 bg-transparent text-[var(--color-text)]">
-      <div className="container mx-auto px-4 max-w-6xl">
-        
-        {/* Título de la Sección */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
+    <div className="section-shell section-block">
+      <SectionIntro
+        eyebrow="Contacto"
+        title="Hablemos de datos, automatización o producto."
+        description="Si estás construyendo una operación más confiable o necesitas convertir un proceso manual en una solución medible, conversemos."
+      />
+
+      <div className="contact-layout">
+        <Motion.div
+          className="contact-panel"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">Contacto</h2>
-          <div className="w-16 h-1 bg-blue-500 mb-6"></div>
-          <p className="text-[var(--color-muted)] text-lg">
-            ¿Tienes alguna consulta o propuesta? Envíame un mensaje y te responderé a la brevedad.
-          </p>
-        </motion.div>
+          <div className="contact-panel__label">Canal directo</div>
+          <a className="contact-email" href={`mailto:${profile.email}`}>
+            {profile.email}<ArrowUpRight />
+          </a>
+          <p>Respondo oportunidades profesionales, colaboraciones técnicas y conversaciones sobre productos basados en datos.</p>
+          <div className="contact-details">
+            <span><MapPin size={17} /> {profile.location}</span>
+            <span><Mail size={17} /> Respuesta por correo</span>
+          </div>
+          <div className="contact-socials">
+            <a href={profile.links.linkedin} target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>
+            <a href={profile.links.github} target="_blank" rel="noreferrer"><Github /> GitHub</a>
+          </div>
+        </Motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
-          {/* Columna Izquierda - Información de Contacto y Mapa */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-5 bg-[#0b1120] border border-[#1e293b] p-8 rounded-xl shadow-lg flex flex-col h-full"
-          >
-            <div className="space-y-8 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-blue-500/10 rounded-full flex-shrink-0 mt-1">
-                  <MapPin size={24} className="text-blue-500" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Dirección</h3>
-                  <p className="text-[var(--color-muted)]">Lima, Perú</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-blue-500/10 rounded-full flex-shrink-0 mt-1">
-                  <Phone size={24} className="text-blue-500" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Teléfono</h3>
-                  <p className="text-[var(--color-muted)]">+51 907 362 779</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-blue-500/10 rounded-full flex-shrink-0 mt-1">
-                  <Mail size={24} className="text-blue-500" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Correo Electrónico</h3>
-                  <p className="text-[var(--color-muted)] break-all">luis_jesusrc@hotmail.com</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Google Maps (Lima, Peru) */}
-            <div className="w-full flex-1 min-h-[250px] rounded-lg overflow-hidden border border-[#1e293b]">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124869.60105315842!2d-77.10860589635791!3d-12.043328225575514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec3%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1sen!2spe!4v1700000000000!5m2!1sen!2spe"
-                className="w-full h-full border-0"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-
-            {/* Descargar CV */}
-            <div className="mt-8 p-6 bg-[#1e293b]/50 border border-slate-700 rounded-lg text-center">
-              <FileText className="mx-auto text-blue-500 mb-3" size={32} />
-              <h3 className="text-lg font-bold text-white mb-2">Curriculum Vitae</h3>
-              <p className="text-slate-400 text-sm mb-4">Descarga mi CV para revisar mi experiencia y habilidades a detalle.</p>
-              <a
-                href={`${import.meta.env.BASE_URL}papers/CV-LUISROMEROCASTRO.pdf`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-colors shadow-lg shadow-blue-500/20"
-              >
-                <Download size={18} />
-                <span>Descargar CV</span>
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Columna Derecha - Formulario */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-7 bg-[#0b1120] border border-[#1e293b] p-8 rounded-xl shadow-lg"
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">Tu Nombre</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full bg-[#1e293b] border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">Tu Correo</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full bg-[#1e293b] border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">Asunto</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="w-full bg-[#1e293b] border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">Mensaje</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="6"
-                  className="w-full bg-[#1e293b] border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
-                  required
-                ></textarea>
-              </div>
-
-              <div className="text-center pt-4">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg hover:shadow-blue-500/30 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-                >
-                  {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
-                </button>
-              </div>
-            </form>
-          </motion.div>
-
-        </div>
+        <Motion.form
+          className="contact-form"
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.08 }}
+        >
+          <div className="form-row">
+            <label>
+              Nombre
+              <input name="name" type="text" autoComplete="name" required placeholder="Tu nombre" />
+            </label>
+            <label>
+              Correo
+              <input name="email" type="email" autoComplete="email" required placeholder="tu@empresa.com" />
+            </label>
+          </div>
+          <label>
+            Asunto
+            <input name="subject" type="text" required placeholder="¿En qué podemos colaborar?" />
+          </label>
+          <label>
+            Mensaje
+            <textarea name="message" rows="6" required placeholder="Cuéntame brevemente el contexto, objetivo y próximos pasos." />
+          </label>
+          <div className="contact-form__footer">
+            <p>Los datos se usan únicamente para responder este mensaje.</p>
+            <button className="button-primary" type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Enviando…" : "Enviar mensaje"}<Send size={17} />
+            </button>
+          </div>
+          <div className={`form-status form-status--${status}`} role="status" aria-live="polite">
+            {status === "success" && "Mensaje enviado. Gracias, te responderé por correo."}
+            {status === "error" && <>No se pudo enviar. Puedes escribirme a <a href={`mailto:${profile.email}`}>{profile.email}</a>.</>}
+          </div>
+        </Motion.form>
       </div>
     </div>
   );

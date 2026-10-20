@@ -1,58 +1,84 @@
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import heroBg from "../assets/images/home.JPEG";
+import { ArrowDown, ArrowUpRight, Download, MapPin } from "lucide-react";
+import { motion as Motion } from "framer-motion";
+import aboutImg from "../assets/images/about.JPEG";
+import { metrics, profile } from "../data/profile";
+
+const reveal = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function HomePage() {
-  const words = ["Data Engineer", "Developer", "Freelancer", "Photographer"];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentText, setCurrentText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const typeSpeed = isDeleting ? 50 : 100;
-    const currentWord = words[currentWordIndex];
-
-    const timeout = setTimeout(() => {
-      if (!isDeleting && currentText === currentWord) {
-        setTimeout(() => setIsDeleting(true), 1500); // Pausa al completar la palabra
-      } else if (isDeleting && currentText === "") {
-        setIsDeleting(false);
-        setCurrentWordIndex((prev) => (prev + 1) % words.length);
-      } else {
-        setCurrentText(currentWord.substring(0, currentText.length + (isDeleting ? -1 : 1)));
-      }
-    }, typeSpeed);
-
-    return () => clearTimeout(timeout);
-  }, [currentText, isDeleting, currentWordIndex, words]);
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <div 
-      className="h-screen w-full relative flex items-center justify-center lg:justify-start lg:pl-32 bg-cover bg-no-repeat bg-[center_80%]"
-      style={{ backgroundImage: `url(${heroBg})` }}
-    >
-      {/* Overlay oscuro sutil para que el texto resalte (opcional) */}
-      <div className="absolute inset-0 bg-black/40 z-0"></div>
+    <div className="hero-section">
+      <div className="hero-glow hero-glow--one" aria-hidden="true" />
+      <div className="hero-glow hero-glow--two" aria-hidden="true" />
 
-      <div className="relative z-10 px-4 text-center lg:text-left w-full max-w-4xl mx-auto lg:mx-0">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+      <div className="section-shell hero-grid">
+        <Motion.div
+          className="hero-copy"
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.1 }}
         >
-          Luis Romero
-        </motion.h1>
-        
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-2xl md:text-4xl text-white font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+          <Motion.div variants={reveal} className="hero-kicker">
+            <span className="status-dot" aria-hidden="true" />
+            Data Engineering · DataOps · Cloud
+          </Motion.div>
+          <Motion.h1 variants={reveal}>{profile.headline}</Motion.h1>
+          <Motion.p variants={reveal} className="hero-summary">
+            {profile.summary} Combino automatización, calidad y gobierno del dato con una mirada práctica de producto.
+          </Motion.p>
+          <Motion.div variants={reveal} className="hero-actions">
+            <button className="button-primary" onClick={scrollToProjects}>
+              Ver casos de estudio <ArrowUpRight size={18} />
+            </button>
+            <a className="button-secondary" href={profile.links.cv} target="_blank" rel="noreferrer">
+              Descargar CV <Download size={17} />
+            </a>
+          </Motion.div>
+          <Motion.div variants={reveal} className="hero-meta">
+            <span><MapPin size={16} aria-hidden="true" /> {profile.location}</span>
+            <span>Disponible para oportunidades en Data Engineering</span>
+          </Motion.div>
+        </Motion.div>
+
+        <Motion.div
+          className="hero-portrait"
+          initial={{ opacity: 0, x: 32 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.75, delay: 0.15 }}
         >
-          I'm <span className="border-b-4 border-blue-500 pb-1">{currentText}</span>
-          <span className="animate-ping font-light">|</span>
-        </motion.p>
+          <div className="hero-portrait__frame">
+            <img src={aboutImg} alt="Luis Romero, Data Engineer" fetchPriority="high" />
+            <div className="hero-portrait__overlay" />
+          </div>
+          <div className="hero-portrait__tag">
+            <span>01</span>
+            <p><strong>Ingeniería con criterio</strong>Del dato a una operación medible.</p>
+          </div>
+          <div className="hero-portrait__outline" aria-hidden="true" />
+        </Motion.div>
+      </div>
+
+      <button className="scroll-cue" onClick={scrollToProjects} aria-label="Ir a proyectos">
+        Explorar <ArrowDown size={16} />
+      </button>
+
+      <div className="section-shell metrics-strip" aria-label="Resultados profesionales destacados">
+        {metrics.map((metric) => (
+          <div key={metric.label} className="metric-item">
+            <strong>{metric.value}</strong>
+            <div>
+              <span>{metric.label}</span>
+              <small>{metric.note}</small>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,46 +1,44 @@
-# 👨‍💻 Luis Jesus Romero Castro - Portfolio
+# Luis Jesus Romero Castro · Portafolio
 
-Bienvenido al repositorio de mi portafolio personal. Este sitio web es mi presentación profesional como **Consultor e Ingeniero de Datos** y está diseñado con una estética limpia, enfocada en la experiencia de usuario y con capacidades dinámicas.
+Portafolio profesional de Luis Jesus Romero Castro, consultor e ingeniero de datos especializado en convertir información compleja en decisiones de negocio claras.
 
-## 🚀 Tecnologías Principales
+## Tecnologías
 
-- **React + Vite**: Motor de renderizado súper rápido para un desarrollo moderno.
-- **Tailwind CSS**: Estilizado utility-first con un sistema de "Dark Mode" de contraste sutil corporativo.
-- **Framer Motion**: Animaciones fluidas, transiciones suaves y comportamientos basados en el scroll.
-- **Lucide React**: Iconografía minimalista y escalable.
+- React 19 y Vite
+- React Router
+- Framer Motion
+- Lucide React
+- CSS modularizado mediante un sistema visual propio
 
-## 📌 Secciones del Portafolio
+## Contenido
 
-- **Home**: Presentación principal y llamado a la acción.
-- **About**: Biografía, competencias clave y contadores de experiencia.
-- **Resume**: Historial laboral y formación académica.
-- **Servicios**: Oferta de consultoría tecnológica y analítica.
-- **Skills**: Nivel de dominio técnico en lenguajes, frameworks y herramientas.
-- **Proyectos**: Filtro de portafolio categorizado con visores y enlaces directos.
-- **Certificaciones**: Validaciones internacionales con visor de documentos oficiales en PDF.
-- **Testimonios & Reconocimientos**: Validaciones de LinkedIn y reconocimientos corporativos.
-- **Contacto**: Formulario UI moderno e integración con mapa interactivo.
+- Presentación profesional y propuesta de valor
+- Experiencia, formación y trayectoria
+- Servicios y capacidades técnicas
+- Casos de estudio y proyectos seleccionados
+- Certificaciones, recomendaciones y reconocimientos
+- Contacto profesional
 
-## 🛠️ Cómo ejecutar localmente
+## Desarrollo local
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/LuisRomero20/mi-portafolio.git
-   ```
-2. Navega al directorio:
-   ```bash
-   cd mi-portafolio
-   ```
-3. Instala las dependencias:
-   ```bash
-   npm install
-   ```
-4. Inicia el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
-5. Abre tu navegador en [http://localhost:5173/](http://localhost:5173/)
+```bash
+npm install
+npm run dev
+```
+
+Comprobaciones antes de publicar:
+
+```bash
+npm run lint
+npm run build
+```
+
+## Despliegue
+
+Vercel está conectado a la rama `main`. Cada cambio enviado a esa rama genera un despliegue de producción automáticamente.
+
+La compilación estándar usa la raíz `/`, adecuada para Vercel. El comando `npm run deploy` conserva compatibilidad con GitHub Pages y compila con la ruta base `/mi-portafolio/`.
 
 ---
 
-*Diseñado y desarrollado por Luis Jesus Romero Castro.*
+Diseñado y desarrollado por Luis Jesus Romero Castro.

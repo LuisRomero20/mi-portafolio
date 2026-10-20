@@ -3,145 +3,166 @@ import skynetMain from "../assets/images/Skynet.png";
 import skynetImg1 from "../assets/images/Skynet1.png";
 import skynetImg2 from "../assets/images/Skynet2.png";
 import skynetImg3 from "../assets/images/Skynet3.png";
-
 import etlPerfil from "../assets/images/etlventasPerfil.png";
 import etlImg1 from "../assets/images/etlventas1.png";
 import etlImg2 from "../assets/images/etlventas2.png";
-
 import finanzasPerfil from "../assets/images/FinanzasPerfil.png";
 import finanzas1 from "../assets/images/Finanzas1.png";
 import finanzas2 from "../assets/images/Finanzas2.png";
 import finanzas3 from "../assets/images/Finanzas3.png";
-
 import ransomwarePerfil from "../assets/images/RasomwarePerfil.png";
 
 export const projects = [
   {
-    id: 1,
-    name: "Plataforma de Análisis Cuantitativo Skynet",
-    description: "Plataforma de análisis cuantitativo deportivo con ML + Poisson para predicciones FIFA World Cup 2026",
-    longDescription: "Plataforma sofisticada que combina modelos Random Forest (250 árboles) con análisis estadístico Poisson. Entrenada con 25+ años de datos de partidos internacionales, prediciendo resultados, probabilidades de goles y mercados secundarios (corners, tarjetas). Incluye reentrenamiento automático de modelos, sincronización de resultados en tiempo real desde GitHub, y auditoría completa de predicciones vs resultados reales.",
+    id: "linkeo",
+    name: "LINKEO · Identidad digital NFC",
+    shortName: "LINKEO",
+    category: "Producto digital",
+    eyebrow: "Co-Founder & Lead Full-Stack",
+    description:
+      "Ecosistema de tarjetas NFC y QR que convierte una interacción física en un perfil digital administrable.",
+    longDescription:
+      "LINKEO conecta tarjetas inteligentes con perfiles digitales editables y una operación comercial preparada para crecer. Mi trabajo abarca la arquitectura del producto, el desarrollo full-stack y el despliegue de la experiencia pública.",
+    technologies: ["React 19", "TypeScript", "Supabase", "Vercel", "NFC / QR"],
+    image: null,
+    accent: "violet",
+    github: "",
+    demo: "https://linkeocards.com/",
+    metrics: { Rol: "Co-Founder", Estado: "En producción", Interacción: "NFC + QR" },
+    context: {
+      problem: "Los datos de contacto y la presencia profesional suelen quedar fragmentados entre canales difíciles de actualizar.",
+      solution: "Una identidad digital editable, activada desde una tarjeta física y respaldada por una arquitectura web moderna.",
+      impact: "Una experiencia de contacto coherente y una base tecnológica que permite operar, medir y ampliar el producto.",
+    },
+    client: "Emprendimiento propio",
+    date: "2025 — Actualidad",
+    featured: true,
+  },
+  {
+    id: "calera-report",
+    name: "CaleraReport · Automatización SAP",
+    shortName: "CaleraReport",
+    category: "Automatización",
+    eyebrow: "Automation & Data Engineering",
+    description:
+      "Consolidador de archivos de pago y automatización de plantillas para reducir trabajo manual en procesos SAP.",
+    longDescription:
+      "Solución enfocada en ordenar archivos de múltiples áreas, validar su estructura y preparar cargas repetibles. Complementa el flujo con automatización de escritorio para disminuir tareas mecánicas y errores de transcripción.",
+    technologies: ["Python", "SAP GUI Scripting", "VBScript", "RPA", "JavaScript"],
+    image: null,
+    accent: "cyan",
+    github: "https://github.com/LuisRomero20/CaleraReport",
+    demo: "https://calerareport-ten.vercel.app",
+    metrics: { Procesamiento: "Por lotes", Ejecución: "100% cliente", Entrega: "Demo pública" },
+    context: {
+      problem: "La consolidación manual de archivos por departamento consumía tiempo y elevaba el riesgo de inconsistencias.",
+      solution: "Un flujo de validación y consolidación por lotes, más plantillas estandarizadas y automatización de pasos repetitivos.",
+      impact: "Proceso más claro, repetible y preparado para reducir reprocesos antes de la carga operativa.",
+    },
+    client: "Caso de automatización",
+    date: "2025",
+    featured: true,
+  },
+  {
+    id: "sales-etl",
+    name: "ETL & Forecasting de Ventas",
+    shortName: "Sales ETL",
+    category: "Data Engineering",
+    eyebrow: "Pipeline end-to-end",
+    description:
+      "Pipeline automatizado que limpia ventas, realiza cargas incrementales y proyecta ingresos a 30 días.",
+    longDescription:
+      "Caso técnico de ingeniería y análisis de datos que transforma archivos con errores e inconsistencias en un flujo reproducible. El proceso limpia la información, entrena un modelo de forecasting y publica indicadores en una interfaz web.",
+    technologies: ["Python", "Prophet", "SQLite", "Streamlit", "Power BI", "PowerShell"],
+    image: etlPerfil,
+    github: "https://github.com/LuisRomero20/end-to-end-sales-etl-pipeline",
+    demo: "https://end-to-end-sales-etl-pipeline-6ao8esedhqua4app97w2o2g.streamlit.app/",
+    metrics: { Forecast: "30 días", Orquestación: "Diaria", Persistencia: "Incremental" },
+    context: {
+      problem: "Reportes de ventas con formatos inconsistentes requerían limpieza manual y no daban una vista oportuna del negocio.",
+      solution: "Un pipeline en Python que valida, transforma y persiste los datos antes de generar el pronóstico y el dashboard.",
+      impact: "KPIs listos para consulta y una proyección reproducible sin repetir la preparación manual de cada archivo.",
+    },
+    dashboardGallery: [etlImg1, etlImg2],
+    client: "Proyecto personal",
+    date: "Caso técnico",
+    featured: true,
+  },
+  {
+    id: "finper",
+    name: "FinPer · Finanzas personales",
+    shortName: "FinPer",
+    category: "Aplicación full-stack",
+    eyebrow: "Full-Stack Architecture",
+    description:
+      "Aplicación web y móvil para organizar deudas, tasas, presupuestos y cronogramas con sincronización en la nube.",
+    longDescription:
+      "FinPer centraliza obligaciones financieras y automatiza cálculos que normalmente se resuelven en hojas separadas. La experiencia combina visualización, tipado estricto y persistencia segura, con una base preparada para uso móvil mediante Capacitor.",
+    technologies: ["React", "TypeScript", "Supabase", "Zustand", "Capacitor", "Recharts"],
+    image: finanzasPerfil,
+    github: "https://github.com/LuisRomero20/Finanzas",
+    demo: "https://finanzas-tau-three.vercel.app/",
+    metrics: { Experiencia: "Web + móvil", Datos: "Sincronización cloud", Cálculos: "Tasas y cuotas" },
+    context: {
+      problem: "Gestionar varias deudas y tipos de tasa en herramientas dispersas dificulta entender el calendario real de pagos.",
+      solution: "Una interfaz única para registrar obligaciones, calcular escenarios y mantener la información sincronizada.",
+      impact: "Mayor claridad sobre compromisos financieros y una base reutilizable para tomar decisiones con contexto.",
+    },
+    dashboardGallery: [finanzas1, finanzas2, finanzas3],
+    client: "Producto personal",
+    date: "En evolución",
+    featured: true,
+  },
+  {
+    id: "skynet-quant",
+    name: "Skynet Quant · Analítica deportiva",
+    shortName: "Skynet Quant",
+    category: "Machine Learning",
+    eyebrow: "Modelado cuantitativo",
+    description:
+      "Plataforma que combina modelos Poisson y aprendizaje automático para explorar predicciones deportivas trazables.",
+    longDescription:
+      "Laboratorio de analítica cuantitativa que integra datos históricos, modelos de clasificación y probabilidades de goles. La aplicación permite comparar predicciones con resultados y mantener una auditoría clara de cada ejecución.",
     technologies: ["Python", "Streamlit", "scikit-learn", "SQLite", "Pandas"],
     image: skynetImg,
     github: "https://github.com/LuisRomero20/skynet-quant-platform",
     demo: "https://skynet-quant-platform-ad5w7seuajetmp7mcnsip4.streamlit.app/",
-    metrics: {
-      "Modelo": "80% Poisson + 20% ML",
-      "Precisión": "53.79%",
-      "Datos": "25+ años históricos"
-    },
+    metrics: { Ensamble: "Poisson + ML", Histórico: "25+ años", Auditoría: "Predicción vs. resultado" },
     context: {
-      problem: "El análisis de históricos deportivos y mercados secundarios se hacía de forma manual, con baja trazabilidad y tiempos altos de ajuste.",
-      solution: "Diseñé un flujo automatizado que combina Poisson y ML, reentrena modelos y publica resultados en una app Streamlit con sincronización continua.",
-      impact: "Aumento de velocidad de análisis y decisiones de predicción con trazabilidad completa de resultados."
+      problem: "El análisis manual de históricos y mercados secundarios hacía difícil repetir criterios y auditar resultados.",
+      solution: "Un flujo automatizado de preparación, modelado y publicación de resultados en una interfaz Streamlit.",
+      impact: "Exploración más rápida y decisiones documentadas con trazabilidad sobre las predicciones realizadas.",
     },
-    dashboardGallery: [
-      skynetMain,
-      skynetImg1,
-      skynetImg2,
-      skynetImg3
-    ],
-    category: "Software & Data",
-    client: "Proyecto Personal",
-    date: "2023 - Presente",
-    featured: true
+    dashboardGallery: [skynetMain, skynetImg1, skynetImg2, skynetImg3],
+    client: "Proyecto personal",
+    date: "En evolución",
+    featured: true,
   },
   {
-    id: 2,
-    name: "Sistema Integrado ETL y Forecasting de Ventas",
-    description: "Pipeline automatizado de datos de ventas con limpieza, forecasting usando Prophet, y dashboard web en Streamlit.",
-    longDescription: "Proyecto de Ingeniería y Análisis de Datos diseñado para resolver la limpieza manual de reportes de ventas y la falta de visibilidad en tiempo real. Automatiza la ingesta de datos sucios (CSVs con errores, nulos, formatos inconsistentes), los procesa con Python, entrena un modelo de forecasting (Prophet) para predecir ingresos de los próximos 30 días, y orquesta una carga incremental en SQLite para exponerlos en un dashboard.",
-    technologies: ["Python", "Streamlit", "Prophet", "SQLite", "Power BI", "PowerShell"],
-    image: etlPerfil,
-    github: "https://github.com/LuisRomero20/end-to-end-sales-etl-pipeline",
-    demo: "https://end-to-end-sales-etl-pipeline-6ao8esedhqua4app97w2o2g.streamlit.app/",
-    metrics: {
-      "Forecast": "Predicción 30 días",
-      "Automatización": "Programado diario 7 AM",
-      "Gestión de Data": "Carga incremental"
-    },
-    context: {
-      problem: "Limpieza manual de reportes de ventas (archivos CSV con errores humanos y formatos inconsistentes) y falta de visibilidad en tiempo real de ingresos.",
-      solution: "Un pipeline ETL en Python orquestado con PowerShell que limpia la data, predice ventas futuras con Prophet, y guarda en SQLite para un dashboard en Streamlit y Power BI.",
-      impact: "Disponibilidad inmediata y automatizada de KPIs limpios de ventas, con proyección confiable a 30 días y cero esfuerzo manual."
-    },
-    dashboardGallery: [
-      etlImg1,
-      etlImg2
-    ],
-    category: "Software & Data",
-    client: "Proyecto Personal",
-    date: "2023 - Presente",
-    featured: true
-  },
-  {
-    id: 3,
-    name: "Sistema de Gestión Financiera Personal",
-    description: "DeudaTracker: Aplicación web moderna para gestionar deudas con cálculos automáticos, gráficos y sincronización en la nube.",
-    longDescription: "Plataforma completa (DeudaTracker) para el control financiero personal. Permite realizar cálculos automáticos de cuotas e intereses, gestionar múltiples monedas, y ofrece seguimiento en tiempo real con gráficos interactivos. Cuenta con autenticación segura, sincronización en la nube mediante Supabase, y una arquitectura moderna orientada a rendimiento.",
-    technologies: ["React", "TypeScript", "Zustand", "Supabase", "Tailwind CSS", "Vite"],
-    image: finanzasPerfil,
-    github: "https://github.com/LuisRomero20/Finanzas",
-    demo: "https://finanzas-tau-three.vercel.app",
-    metrics: {
-      "Frontend": "React + TypeScript",
-      "Backend": "Supabase (PostgreSQL)",
-      "UI": "Tailwind + Recharts"
-    },
-    context: {
-      problem: "Dificultad para llevar un control exacto de múltiples deudas, calcular intereses (tasas nominales/efectivas), y visualizar proyecciones de pagos de manera amigable.",
-      solution: "Se desarrolló una aplicación web responsiva y tipada (TypeScript) que centraliza el estado de las deudas, automatiza la matemática financiera y guarda todo de forma segura en la nube.",
-      impact: "Proporciona claridad total sobre las obligaciones financieras y cronogramas de pago, permitiendo al usuario tomar mejores decisiones económicas."
-    },
-    dashboardGallery: [
-      finanzas1,
-      finanzas2,
-      finanzas3
-    ],
-    category: "Software & Data",
-    client: "Proyecto Personal",
-    date: "2023 - Presente",
-    featured: true
-  },
-  {
-    id: 4,
-    name: "Machine Learning as a Tool to Combat Ransomware in Resource-Constrained Business Environment",
-    description: "Artículo científico publicado en el International Journal of Advanced Computer Science and Applications (IJACSA) 2024.",
-    longDescription: "Investigación que propone un modelo de ciberseguridad basado en Machine Learning (Random Forest y SVM) diseñado específicamente para detectar y mitigar ataques de ransomware en microempresas con recursos limitados. El modelo logró una precisión superior al 90% en entornos controlados, ofreciendo una arquitectura ligera y adaptable.",
-    technologies: ["Machine Learning", "Random Forest", "SVM", "Cybersecurity", "Python"],
+    id: "ransomware-ml",
+    name: "ML para detección de ransomware",
+    shortName: "Ransomware ML",
+    category: "Investigación",
+    eyebrow: "Artículo indexado · IJACSA 2024",
+    description:
+      "Investigación sobre modelos ligeros de detección para organizaciones con recursos tecnológicos limitados.",
+    longDescription:
+      "Artículo científico que estudia Random Forest, SVM y redes neuronales para reconocer patrones asociados a ransomware. El trabajo propone una alternativa adaptable para pequeñas organizaciones que no pueden desplegar infraestructura EDR compleja.",
+    technologies: ["Python", "Random Forest", "SVM", "Neural Networks", "Cybersecurity"],
     image: ransomwarePerfil,
     github: "",
-    demo: "http://dx.doi.org/10.14569/IJACSA.2024.0151253",
+    demo: "https://dx.doi.org/10.14569/IJACSA.2024.0151253",
     pdfUrl: "/papers/ransomware.pdf",
-    citation: "Luis Jesús Romero Castro, Piero Alexander Cruz Aquino and Fidel Eugenio Garcia Rojas. “Machine Learning as a Tool to Combat Ransomware in Resource-Constrained Business Environment”. International Journal of Advanced Computer Science and Applications (ijacsa) 15.12 (2024). http://dx.doi.org/10.14569/IJACSA.2024.0151253",
-    metrics: {
-      "Precisión del Modelo": "> 90%",
-      "Algoritmos": "Random Forest, SVM, NN",
-      "Revista": "IJACSA (Scopus)"
-    },
+    citation:
+      "Luis Jesús Romero Castro, Piero Alexander Cruz Aquino y Fidel Eugenio Garcia Rojas. International Journal of Advanced Computer Science and Applications, 15(12), 2024.",
+    metrics: { Precisión: "> 90%", Respuesta: "Hasta −70%", Publicación: "IJACSA · Scopus" },
     context: {
-      problem: "Las microempresas carecen de recursos financieros y tecnológicos para implementar sistemas avanzados de protección contra el ransomware, dejándolas altamente vulnerables.",
-      solution: "Se diseñó y validó un modelo de ML escalable y eficiente, apoyado por una arquitectura integrada, para identificar patrones de comportamiento malicioso en tiempo real.",
-      impact: "Reducción significativa en los tiempos de respuesta ante ataques (hasta un 70% menos) y prevención del impacto financiero asociado al secuestro de datos."
+      problem: "Las microempresas suelen carecer de recursos para implementar plataformas avanzadas de protección contra ransomware.",
+      solution: "Diseño y validación experimental de modelos supervisados capaces de detectar comportamiento malicioso con una arquitectura ligera.",
+      impact: "Resultados de investigación con precisión superior al 90% y reducción reportada de hasta 70% en tiempo de respuesta.",
     },
-    category: "Investigación",
-    client: "Universidad Peruana de Ciencias Aplicadas",
+    client: "Investigación académica · UPC",
     date: "Diciembre 2024",
-    featured: true
+    featured: true,
   },
-  {
-    id: 5,
-    name: "Portafolio de Fotografía Arquitectónica y Paisajes",
-    description: "Colección de fotografías profesionales enfocadas en arquitectura urbana y paisajes naturales.",
-    longDescription: "Espacio en construcción. Muy pronto podrás visualizar mi galería completa de fotografía arquitectónica y de paisajes, capturando la esencia de diferentes entornos urbanos y naturales con un enfoque en simetría, contrastes y texturas.",
-    technologies: ["Lightroom", "Adobe Photoshop", "Fotografía Digital"],
-    image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop",
-    dashboardGallery: [],
-    github: "",
-    category: "Fotografía",
-    client: "Proyecto Personal",
-    date: "Próximamente",
-    featured: false,
-    comingSoon: true
-  }
 ];

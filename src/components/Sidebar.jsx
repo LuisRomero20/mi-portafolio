@@ -3,28 +3,28 @@ import { Home, User, FileText, Briefcase, Code, Award, MessageSquare, Mail, Gith
 import { motion, AnimatePresence } from "framer-motion";
 import perfilImg from "../assets/images/perfil.JPEG";
 
+const PROFILE = {
+  name: "Luis Romero",
+  email: "luis_jesusrc@hotmail.com",
+  github: "https://github.com/LuisRomero20",
+  linkedin: "https://www.linkedin.com/in/luisjesusromerocastro/",
+};
+
+const navLinks = [
+  { id: "home", label: "Inicio", icon: <Home size={20} /> },
+  { id: "about", label: "Sobre mí", icon: <User size={20} /> },
+  { id: "resume", label: "Resumen", icon: <FileText size={20} /> },
+  { id: "skills", label: "Habilidades", icon: <Code size={20} /> },
+  { id: "projects", label: "Proyectos", icon: <Briefcase size={20} /> },
+  { id: "services", label: "Servicios", icon: <Layers size={20} /> },
+  { id: "certifications", label: "Certificaciones", icon: <Award size={20} /> },
+  { id: "recommendations", label: "Testimonios y Reconocimientos", icon: <Trophy size={20} /> },
+  { id: "contact", label: "Contacto", icon: <Mail size={20} /> },
+];
+
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-
-  const PROFILE = {
-    name: "Luis Romero",
-    email: "luis_jesusrc@hotmail.com",
-    github: "https://github.com/LuisRomero20",
-    linkedin: "https://www.linkedin.com/in/luisjesusromerocastro/",
-  };
-
-  const navLinks = [
-    { id: "home", label: "Inicio", icon: <Home size={20} /> },
-    { id: "about", label: "Sobre mí", icon: <User size={20} /> },
-    { id: "resume", label: "Resumen", icon: <FileText size={20} /> },
-    { id: "skills", label: "Habilidades", icon: <Code size={20} /> },
-    { id: "projects", label: "Proyectos", icon: <Briefcase size={20} /> },
-    { id: "services", label: "Servicios", icon: <Layers size={20} /> },
-    { id: "certifications", label: "Certificaciones", icon: <Award size={20} /> },
-    { id: "recommendations", label: "Testimonios y Reconocimientos", icon: <Trophy size={20} /> },
-    { id: "contact", label: "Contacto", icon: <Mail size={20} /> },
-  ];
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const closeSidebar = () => setIsOpen(false);
