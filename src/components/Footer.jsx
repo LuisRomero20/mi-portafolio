@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { SiGithub, SiInstagram, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { profile } from "../data/profile";
 
 export default function Footer() {
@@ -14,14 +15,20 @@ export default function Footer() {
       <div className="section-shell site-footer__bottom">
         <div>
           <strong>{profile.shortName}</strong>
-          <span>Data Engineering · DataOps · AI Systems</span>
+          <span>{profile.role}</span>
         </div>
         <div className="footer-links">
           <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn de Luis Romero">
-            <Linkedin size={20} />
+            <SiLinkedin size={19} />
           </a>
           <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub de Luis Romero">
-            <Github size={20} />
+            <SiGithub size={19} />
+          </a>
+          <a href={profile.links.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp de Luis Romero">
+            <SiWhatsapp size={19} />
+          </a>
+          <a href={profile.links.instagram} target="_blank" rel="noreferrer" aria-label="Instagram de Luis Romero">
+            <SiInstagram size={19} />
           </a>
         </div>
         <p>© {new Date().getFullYear()} · Lima, Perú</p>

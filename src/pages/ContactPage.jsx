@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Send } from "lucide-react";
 import { motion as Motion } from "framer-motion";
+import { SiGithub, SiInstagram, SiLinkedin, SiTiktok, SiVsco, SiWhatsapp, SiX } from "react-icons/si";
 import SectionIntro from "../components/SectionIntro";
 import { profile } from "../data/profile";
 
@@ -50,10 +51,16 @@ export default function ContactPage() {
           <div className="contact-details">
             <span><MapPin size={17} /> {profile.location}</span>
             <span><Mail size={17} /> Respuesta por correo</span>
+            <a href={profile.links.whatsapp} target="_blank" rel="noreferrer"><SiWhatsapp /> {profile.phoneDisplay}</a>
           </div>
-          <div className="contact-socials">
-            <a href={profile.links.linkedin} target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>
-            <a href={profile.links.github} target="_blank" rel="noreferrer"><Github /> GitHub</a>
+          <div className="contact-socials" aria-label="Redes y presencia digital">
+            <a href={profile.links.linkedin} target="_blank" rel="noreferrer"><SiLinkedin /> LinkedIn</a>
+            <a href={profile.links.github} target="_blank" rel="noreferrer"><SiGithub /> GitHub</a>
+            <a href={profile.links.whatsapp} target="_blank" rel="noreferrer"><SiWhatsapp /> WhatsApp</a>
+            <a href={profile.links.instagram} target="_blank" rel="noreferrer"><SiInstagram /> Instagram</a>
+            <a href={profile.links.vsco} target="_blank" rel="noreferrer"><SiVsco /> VSCO</a>
+            <a href={profile.links.tiktok} target="_blank" rel="noreferrer"><SiTiktok /> TikTok</a>
+            <a href={profile.links.x} target="_blank" rel="noreferrer"><SiX /> X</a>
           </div>
         </Motion.div>
 

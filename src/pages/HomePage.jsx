@@ -1,16 +1,15 @@
 import {
   ArrowDown,
   ArrowUpRight,
-  BadgeCheck,
   Download,
-  Github,
-  Linkedin,
   Mail,
   MapPin,
 } from "lucide-react";
 import { motion as Motion } from "framer-motion";
-import aboutImg from "../assets/images/about.JPEG";
+import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
+import profileImg from "../assets/images/perfil.JPEG";
 import { certifications } from "../data/certifications";
+import { industryContexts } from "../data/industryContexts";
 import { capabilityGroups, profile } from "../data/profile";
 import { projects } from "../data/projects";
 
@@ -20,10 +19,10 @@ const reveal = {
 };
 
 const proofPoints = [
-  { value: "3+", label: "años de experiencia", note: "Desde 2023" },
   { value: projects.length.toString(), label: "casos documentados", note: "Datos, IA y producto" },
   { value: certifications.length.toString(), label: "credenciales verificables", note: "Con respaldo documental" },
   { value: capabilityGroups.length.toString(), label: "frentes técnicos", note: "Práctica end-to-end" },
+  { value: industryContexts.length.toString(), label: "contextos profesionales", note: "Banca, industria y minería" },
 ];
 
 export default function HomePage() {
@@ -43,15 +42,12 @@ export default function HomePage() {
           animate="visible"
           transition={{ staggerChildren: 0.1 }}
         >
-          <Motion.p variants={reveal} className="hero-name">{profile.name}</Motion.p>
           <Motion.div variants={reveal} className="hero-kicker">
             <span className="status-dot" aria-hidden="true" />
-            {profile.role} <span aria-hidden="true">→</span> AI Engineering
+            {profile.role}
           </Motion.div>
           <Motion.h1 variants={reveal}>{profile.headline}</Motion.h1>
-          <Motion.p variants={reveal} className="hero-summary">
-            {profile.summary} Combino experiencia operativa, automatización y construcción de producto mientras expando el perfil hacia sistemas impulsados por IA.
-          </Motion.p>
+          <Motion.p variants={reveal} className="hero-summary">{profile.summary}</Motion.p>
           <Motion.div variants={reveal} className="hero-actions">
             <button className="button-primary" onClick={() => scrollTo("projects")}>
               Ver proyectos <ArrowUpRight size={18} />
@@ -65,15 +61,18 @@ export default function HomePage() {
           </Motion.div>
           <Motion.div variants={reveal} className="hero-social">
             <a href={profile.links.linkedin} target="_blank" rel="noreferrer">
-              <Linkedin size={16} aria-hidden="true" /> LinkedIn
+              <SiLinkedin aria-hidden="true" /> LinkedIn
             </a>
             <a href={profile.links.github} target="_blank" rel="noreferrer">
-              <Github size={16} aria-hidden="true" /> GitHub
+              <SiGithub aria-hidden="true" /> GitHub
+            </a>
+            <a href={profile.links.whatsapp} target="_blank" rel="noreferrer">
+              <SiWhatsapp aria-hidden="true" /> WhatsApp
             </a>
           </Motion.div>
           <Motion.div variants={reveal} className="hero-meta">
             <span><MapPin size={16} aria-hidden="true" /> {profile.location}</span>
-            <span>Disponible para oportunidades en Data Engineering y DataOps</span>
+            <span>Disponible para oportunidades en datos, automatización y tecnología aplicada</span>
           </Motion.div>
         </Motion.div>
 
@@ -84,12 +83,7 @@ export default function HomePage() {
           transition={{ duration: 0.75, delay: 0.15 }}
         >
           <div className="hero-portrait__frame">
-            <img src={aboutImg} alt="Luis Romero, Data Engineer" fetchPriority="high" />
-            <div className="hero-portrait__overlay" />
-          </div>
-          <div className="hero-portrait__tag">
-            <BadgeCheck aria-hidden="true" />
-            <p><strong>Datos que operan con confianza</strong>Calidad, observabilidad y control antes de escalar.</p>
+            <img src={profileImg} alt="Retrato profesional de Luis Romero" fetchPriority="high" />
           </div>
           <div className="hero-portrait__outline" aria-hidden="true" />
         </Motion.div>

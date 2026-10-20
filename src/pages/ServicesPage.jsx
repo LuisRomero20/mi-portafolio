@@ -1,6 +1,7 @@
 import { BarChart3, Boxes, Database, Gauge, ShieldCheck, Workflow } from "lucide-react";
 import { motion as Motion } from "framer-motion";
 import SectionIntro from "../components/SectionIntro";
+import TechnologyBadge from "../components/TechnologyBadge";
 import { capabilityGroups } from "../data/profile";
 
 const icons = [Database, Gauge, ShieldCheck, BarChart3];
@@ -32,8 +33,8 @@ export default function ServicesPage() {
               </div>
               <h3>{group.title}</h3>
               <p>{group.description}</p>
-              <div className="tag-list">
-                {group.stack.map((item) => <span key={item}>{item}</span>)}
+              <div className="technology-list" aria-label={`Tecnologías de ${group.title}`}>
+                {group.stack.map((item) => <TechnologyBadge key={item} name={item} />)}
               </div>
             </Motion.article>
           );

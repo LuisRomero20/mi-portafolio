@@ -1,15 +1,22 @@
 export const profile = {
   name: "Luis Jesús Romero Castro",
   shortName: "Luis Romero",
-  role: "Data Engineer · DataOps · Cloud",
+  role: "Data Engineering · DataOps · Cloud · AI Applied",
   location: "Lima, Perú",
   email: "luis_jesusrc@hotmail.com",
-  headline: "Construyo sistemas de datos confiables y los preparo para automatización e IA.",
+  phone: "+51907362779",
+  phoneDisplay: "+51 907 362 779",
+  headline: "Transformo datos en sistemas inteligentes que impulsan decisiones y automatizan procesos.",
   summary:
-    "Diseño pipelines, controles y herramientas operativas que vuelven los procesos críticos más observables, trazables y escalables.",
+    "Ingeniería de datos, automatización y tecnología aplicada para construir sistemas confiables, eficientes y escalables.",
   links: {
     github: "https://github.com/LuisRomero20",
     linkedin: "https://www.linkedin.com/in/luisjesusromerocastro/",
+    whatsapp: "https://wa.me/51907362779",
+    instagram: "https://www.instagram.com/luisjesusrc/",
+    vsco: "https://vsco.co/luisromerocastro/gallery",
+    tiktok: "https://www.tiktok.com/@luisjesusrc",
+    x: "https://x.com/LuisJesus_rc",
     cv: `${import.meta.env.BASE_URL}papers/CV-LUISROMEROCASTRO.pdf`,
   },
 };
@@ -17,21 +24,21 @@ export const profile = {
 export const careerDirection = [
   {
     title: "Base actual",
-    label: "Data Engineering",
+    label: "Ingeniería + automatización",
     description:
-      "Pipelines, calidad, observabilidad y gobierno para operaciones de datos que necesitan estabilidad y trazabilidad.",
+      "Construyo soluciones confiables conectando datos, procesos y tecnología aplicada.",
   },
   {
     title: "Ventaja diferencial",
-    label: "Operación + producto",
+    label: "Pensamiento end-to-end",
     description:
-      "Conecto la realidad operativa con interfaces y automatizaciones que las personas pueden usar, medir y mantener.",
+      "Entiendo el problema completo y lo convierto en sistemas claros, medibles y mantenibles.",
   },
   {
     title: "Dirección profesional",
-    label: "AI Engineering",
+    label: "AI Applied",
     description:
-      "Estoy expandiendo esa base hacia RAG, agentes, memoria y automatización inteligente con permisos y auditoría.",
+      "Extiendo esa base hacia soluciones inteligentes con memoria, automatización y control humano.",
   },
 ];
 

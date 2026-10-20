@@ -11,8 +11,8 @@ export default function AboutPage() {
     <div className="section-shell section-block">
       <SectionIntro
         eyebrow="Perfil profesional"
-        title="Ingeniería de datos hoy. Arquitectura e IA como siguiente capa."
-        description="Una trayectoria construida desde la operación: entender el flujo real, estabilizarlo y convertirlo en una plataforma capaz de crecer."
+        title="Ingeniería, automatización y producto con una base sólida en datos."
+        description="Una trayectoria orientada a comprender problemas reales y convertirlos en soluciones tecnológicas que puedan crecer."
       />
 
       <div className="about-layout">
@@ -23,13 +23,13 @@ export default function AboutPage() {
           viewport={{ once: true, amount: 0.25 }}
         >
           <p>
-            Soy <strong>{profile.name}</strong>, bachiller en Ingeniería de Sistemas de Información por la UPC, AWS Certified Cloud Practitioner y Data Engineer con experiencia desde 2023.
+            Soy <strong>{profile.name}</strong>, bachiller en Ingeniería de Sistemas de Información por la UPC, egresado de un programa acreditado por ABET y AWS Certified Cloud Practitioner.
           </p>
           <p>
-            Trabajo sobre pipelines, procesos batch, controles de calidad y automatizaciones en contextos donde una falla operativa sí tiene consecuencias. También construyo productos propios, lo que me obliga a conectar arquitectura, experiencia de usuario y entrega.
+            Mi trabajo combina ingeniería de datos, automatización, desarrollo de productos digitales y tecnología aplicada. Conecto procesos, arquitectura y experiencia de uso para convertir necesidades complejas en soluciones claras, eficientes y mantenibles.
           </p>
           <p>
-            Mi evolución hacia AI Engineering parte de esa base: datos gobernados, observabilidad y acciones controladas. No busco añadir IA como etiqueta, sino diseñar sistemas útiles, auditables y seguros.
+            Mi evolución hacia la IA aplicada parte de esa base: información confiable, sistemas observables y automatizaciones con propósito. El objetivo no es añadir IA como etiqueta, sino construir soluciones inteligentes, útiles y responsables.
           </p>
           <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="text-link">
             Ver trayectoria completa en LinkedIn <ArrowUpRight size={17} />
@@ -62,9 +62,9 @@ export default function AboutPage() {
       <div className="beyond-card">
         <img src={homeImg} alt="Luis Romero fotografiando un paisaje de montaña" loading="lazy" />
         <div>
-          <p className="eyebrow">Más allá del código</p>
+          <p className="eyebrow">Un poco más de mí</p>
           <h3>Curiosidad, calma y perspectiva.</h3>
-          <p>La fotografía, los viajes, el fútbol y la música alimentan una forma de trabajar atenta al detalle y abierta a nuevas ideas.</p>
+          <p>También encuentro inspiración fuera del trabajo. La fotografía, los viajes, el fútbol y la música fortalecen mi atención al detalle, mi creatividad y la forma en que observo cada problema.</p>
         </div>
       </div>
     </div>

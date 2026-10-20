@@ -13,8 +13,8 @@ export default function CertificationsPage() {
     <div className="section-shell section-block">
       <SectionIntro
         eyebrow="Formación e investigación"
-        title="Credenciales seleccionadas y evidencia pública."
-        description="Una selección relevante para ingeniería de datos, cloud, trabajo ágil e idiomas. Cada tarjeta abre su respaldo documental."
+        title="Formación acreditada y credenciales con evidencia pública."
+        description="Incluye la acreditación internacional ABET de mi formación en la UPC, certificación AWS, especialización técnica, trabajo ágil e idiomas. Cada tarjeta abre su respaldo documental."
       />
 
       <Motion.article
