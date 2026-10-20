@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowUpRight, ExternalLink, Github, X } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle2, ExternalLink, Github, Info, X } from "lucide-react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../data/projects";
 
 export default function ProjectDetailPage() {
   const { id } = useParams();
-  const project = projects.find((item) => item.id === id);
+  const project = projects.find((item) => item.id === id || item.legacyIds?.includes(id));
   const [activeImage, setActiveImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -115,6 +115,19 @@ export default function ProjectDetailPage() {
             <article><span>02</span><h3>Solución</h3><p>{project.context.solution}</p></article>
             <article><span>03</span><h3>Impacto</h3><p>{project.context.impact}</p></article>
           </div>
+          {project.features?.length ? (
+            <section className="project-feature-list">
+              <p className="eyebrow">{project.featuresTitle || "Funciones principales"}</p>
+              <div>
+                {project.features.map((feature) => (
+                  <article key={feature}><CheckCircle2 aria-hidden="true" /><span>{feature}</span></article>
+                ))}
+              </div>
+            </section>
+          ) : null}
+          {project.statusNote ? (
+            <div className="project-status-note"><Info aria-hidden="true" /><p>{project.statusNote}</p></div>
+          ) : null}
           {project.citation && (
             <div className="citation-box"><strong>Referencia</strong><p>{project.citation}</p></div>
           )}
@@ -126,9 +139,15 @@ export default function ProjectDetailPage() {
             <div key={label}><span>{label}</span><strong>{value}</strong></div>
           ))}
           <div className="project-facts__stack">
-            <span>Tecnologías</span>
+            <span>Stack actual</span>
             <div className="tag-list">{project.technologies.map((item) => <span key={item}>{item}</span>)}</div>
           </div>
+          {project.plannedTechnologies?.length ? (
+            <div className="project-facts__stack">
+              <span>Arquitectura objetivo</span>
+              <div className="tag-list">{project.plannedTechnologies.map((item) => <span key={item}>{item}</span>)}</div>
+            </div>
+          ) : null}
           <div className="project-facts__actions">
             {project.demo && (
               <a className="button-primary" href={project.demo} target="_blank" rel="noreferrer">

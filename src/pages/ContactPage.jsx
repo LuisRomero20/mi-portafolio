@@ -31,8 +31,8 @@ export default function ContactPage() {
     <div className="section-shell section-block">
       <SectionIntro
         eyebrow="Contacto"
-        title="Hablemos de datos, automatización o producto."
-        description="Si estás construyendo una operación más confiable o necesitas convertir un proceso manual en una solución medible, conversemos."
+        title="Hablemos de datos, automatización o sistemas de IA."
+        description="Si necesitas fortalecer una plataforma de datos, convertir un proceso manual en una solución medible o explorar una automatización con IA, conversemos."
       />
 
       <div className="contact-layout">
@@ -46,7 +46,7 @@ export default function ContactPage() {
           <a className="contact-email" href={`mailto:${profile.email}`}>
             {profile.email}<ArrowUpRight />
           </a>
-          <p>Respondo oportunidades profesionales, colaboraciones técnicas y conversaciones sobre productos basados en datos.</p>
+          <p>Respondo oportunidades profesionales, colaboraciones técnicas y conversaciones sobre productos de datos e IA aplicada.</p>
           <div className="contact-details">
             <span><MapPin size={17} /> {profile.location}</span>
             <span><Mail size={17} /> Respuesta por correo</span>

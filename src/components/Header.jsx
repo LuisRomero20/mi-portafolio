@@ -7,6 +7,7 @@ const navLinks = [
   { id: "about", label: "Perfil" },
   { id: "projects", label: "Proyectos" },
   { id: "experience", label: "Experiencia" },
+  { id: "contexts", label: "Entornos" },
 ];
 
 export default function Header() {

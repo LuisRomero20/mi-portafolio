@@ -1,6 +1,6 @@
 # Luis Jesus Romero Castro · Portafolio
 
-Portafolio profesional de Luis Jesus Romero Castro, consultor e ingeniero de datos especializado en convertir información compleja en decisiones de negocio claras.
+Portafolio profesional de Luis Jesus Romero Castro, Data Engineer especializado en construir sistemas de datos confiables y prepararlos para automatización e IA.
 
 ## Tecnologías
 
@@ -16,6 +16,8 @@ Portafolio profesional de Luis Jesus Romero Castro, consultor e ingeniero de dat
 - Experiencia, formación y trayectoria
 - Servicios y capacidades técnicas
 - Casos de estudio y proyectos seleccionados
+- Viernes, laboratorio de Personal AI Operating System
+- Contextos sectoriales y experiencia asociada a organizaciones reconocidas
 - Certificaciones, recomendaciones y reconocimientos
 - Contacto profesional
 

@@ -19,8 +19,8 @@ export default function ResumePage() {
       <div className="experience-heading">
         <SectionIntro
           eyebrow="Experiencia"
-          title="Responsabilidad creciente, impacto medible."
-          description="De optimizar experiencias web a operar datos críticos, automatizar procesos industriales y construir producto digital."
+          title="Experiencia construida desde la operación real."
+          description="Una progresión desde desarrollo y analítica hacia automatización industrial, operación de datos críticos y construcción de producto."
         />
         <a className="button-secondary" href={profile.links.cv} target="_blank" rel="noreferrer">
           CV completo <Download size={17} />

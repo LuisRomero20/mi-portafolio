@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import CertificationsPage from "./pages/CertificationsPage";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
+import IndustryContextsPage from "./pages/IndustryContextsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import RecommendationsPage from "./pages/RecommendationsPage";
@@ -34,7 +35,8 @@ function MainContent() {
       <section id="services"><ServicesPage /></section>
       <section id="projects" className="section-surface"><ProjectsPage /></section>
       <section id="experience"><ResumePage /></section>
-      <section id="skills" className="section-surface"><SkillsPage /></section>
+      <section id="contexts" className="section-surface"><IndustryContextsPage /></section>
+      <section id="skills"><SkillsPage /></section>
       <section id="credentials"><CertificationsPage /></section>
       <section id="recommendations" className="section-surface"><RecommendationsPage /></section>
       <section id="contact"><ContactPage /></section>

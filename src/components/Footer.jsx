@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="section-shell site-footer__bottom">
         <div>
           <strong>{profile.shortName}</strong>
-          <span>Data Engineering · DataOps · Cloud</span>
+          <span>Data Engineering · DataOps · AI Systems</span>
         </div>
         <div className="footer-links">
           <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn de Luis Romero">

@@ -1,12 +1,12 @@
 export const profile = {
   name: "Luis Jesús Romero Castro",
   shortName: "Luis Romero",
-  role: "Data Engineer",
+  role: "Data Engineer · DataOps · Cloud",
   location: "Lima, Perú",
   email: "luis_jesusrc@hotmail.com",
-  headline: "Convierto operaciones de datos complejas en sistemas confiables.",
+  headline: "Construyo sistemas de datos confiables y los preparo para automatización e IA.",
   summary:
-    "Diseño y automatizo flujos de datos para que los procesos críticos fallen menos, sean observables y puedan medirse mejor.",
+    "Diseño pipelines, controles y herramientas operativas que vuelven los procesos críticos más observables, trazables y escalables.",
   links: {
     github: "https://github.com/LuisRomero20",
     linkedin: "https://www.linkedin.com/in/luisjesusromerocastro/",
@@ -14,11 +14,25 @@ export const profile = {
   },
 };
 
-export const metrics = [
-  { value: "−22%", label: "fallas batch mensuales", note: "Procesos críticos" },
-  { value: "295", label: "pases certificados", note: "A producción" },
-  { value: "3,39%", label: "observaciones", note: "Bajo el objetivo de 5%" },
-  { value: "+3 años", label: "de experiencia", note: "Datos, automatización y producto" },
+export const careerDirection = [
+  {
+    title: "Base actual",
+    label: "Data Engineering",
+    description:
+      "Pipelines, calidad, observabilidad y gobierno para operaciones de datos que necesitan estabilidad y trazabilidad.",
+  },
+  {
+    title: "Ventaja diferencial",
+    label: "Operación + producto",
+    description:
+      "Conecto la realidad operativa con interfaces y automatizaciones que las personas pueden usar, medir y mantener.",
+  },
+  {
+    title: "Dirección profesional",
+    label: "AI Engineering",
+    description:
+      "Estoy expandiendo esa base hacia RAG, agentes, memoria y automatización inteligente con permisos y auditoría.",
+  },
 ];
 
 export const experiences = [

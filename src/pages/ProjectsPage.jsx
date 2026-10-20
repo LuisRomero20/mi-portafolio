@@ -8,14 +8,15 @@ export default function ProjectsPage() {
     <div className="section-shell section-block">
       <SectionIntro
         eyebrow="Trabajo seleccionado"
-        title="Casos que muestran cómo pienso y ejecuto."
-        description="Una selección de producto, automatización, ingeniería de datos e investigación. Cada caso explica el problema, la solución y la evidencia disponible."
+        title="Ingeniería aplicada: del pipeline al sistema inteligente."
+        description="Casos priorizados por relevancia profesional. Cada ficha distingue el tipo de trabajo, el estado real y la evidencia disponible."
       />
 
       <div className="projects-grid">
         {projects.map((project, index) => (
           <Motion.div
             key={project.id}
+            className={project.lead ? "project-grid-item project-grid-item--lead" : "project-grid-item"}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
