@@ -51,28 +51,53 @@ export const projects = [
   },
   {
     id: "calera-report",
-    name: "Automatización de conciliación y carga para SAP",
+    name: "CaleraReport — Enterprise Document Automation & SAP Integration",
     shortName: "CaleraReport",
-    category: "Automatización",
-    eyebrow: "Automation & Data Engineering",
-    priorityLabel: "Automatización aplicada",
+    category: "Automatización & Controles",
+    eyebrow: "Document Engineering · Fail-Closed SAP · Financial Controls",
+    priorityLabel: "Caso Enterprise Destacado",
     description:
-      "Solución por lotes que valida, consolida y estandariza archivos de pago antes de SAP, reduciendo tareas manuales y riesgo de reprocesos.",
+      "Plataforma de ingeniería documental y preparación contable que concilia expedientes multisede (HES, OC, Factura/RXH, SOLPED), genera el Maestro de Control A–W con fórmulas vivas y automatiza la contabilización SAP MIRO bajo controles fail-closed.",
     longDescription:
-      "Solución enfocada en ordenar archivos de múltiples áreas, validar su estructura y preparar cargas repetibles. Complementa el flujo con automatización de escritorio para disminuir tareas mecánicas y errores de transcripción.",
-    technologies: ["Python", "SAP GUI Scripting", "VBScript", "RPA", "JavaScript"],
-    image: null,
+      "Transformación integral de CaleraReport a una suite de operaciones documentales y control financiero empresarial. Procesa expedientes en cliente garantizando cero fuga de datos sensibles, aplica validaciones deterministas de importes y semáforos de liberación de tres niveles, gestiona trazabilidad con hash SHA-256 para renombrado y reversión, e implementa tres alternativas de automatización SAP MIRO con simulación obligatoria y rechazo ante ambigüedad.",
+    technologies: [
+      "Python 3.11",
+      "SAP GUI Scripting",
+      "JavaScript (ES2022)",
+      "PDF.js",
+      "SheetJS",
+      "VBScript / PyAutoGUI",
+      "GitHub Actions CI",
+    ],
+    image: laCaleraLogo,
     accent: "cyan",
     github: "https://github.com/LuisRomero20/CaleraReport",
     demo: "https://calerareport-ten.vercel.app",
-    metrics: { Procesamiento: "Por lotes", Ejecución: "100% cliente", Entrega: "Demo pública" },
-    context: {
-      problem: "La consolidación manual de archivos por departamento consumía tiempo y elevaba el riesgo de inconsistencias.",
-      solution: "Un flujo de validación y consolidación por lotes, más plantillas estandarizadas y automatización de pasos repetitivos.",
-      impact: "Proceso más claro, repetible y preparado para reducir reprocesos antes de la carga operativa.",
+    metrics: {
+      "Conciliación": "100% determinista",
+      "Privacidad": "Zero Data Leak",
+      "Controles SAP": "Fail-Closed estricto",
+      "Validación": "21 tests / CI",
     },
-    client: "Caso de automatización",
-    date: "2025",
+    context: {
+      problem:
+        "La revisión y conciliación manual de expedientes de servicios (HES, OC, facturas, recibos por honorarios, SOLPED) entre múltiples sedes requería días de trabajo repetitivo, propiciando discrepancias de importes y riesgo crítico de imputación errónea en SAP MIRO.",
+      solution:
+        "Un motor de conciliación documental local (navegador y Python) con validación de tolerancias, generación del Maestro A–W con fórmulas Excel vivas, gestión de incidencias bloqueantes y tres bots SAP con parada fail-closed y aprobación afirmativa obligatoria.",
+      impact:
+        "Ciclo de procesamiento reducido de días a segundos por lote, trazabilidad forense con reversión instantánea y garantía de tolerancia cero a registros ambiguos o desbalanceados en el ERP.",
+    },
+    featuresTitle: "Capacidades Enterprise Operativas",
+    features: [
+      "Ingesta multisede y conciliación determinista de expedientes (HES, OC, Factura/RXH, SOLPED).",
+      "Generación de libro Maestro A–W con fórmulas vivas, semáforos condicionales y hoja de incidencias.",
+      "Formato Masivo SAP MIRO A–U compatible con procesos contables estándar y bots existentes.",
+      "Renombrado documental con nomenclatura {MIRO} y reversión garantizada por hash SHA-256.",
+      "Automatización SAP GUI fail-closed: aprobación afirmativa explícita, verificación de saldo 0.00 y validación de 10 dígitos.",
+      "Suite de 21 pruebas automatizadas con fixtures 100% sintéticos y CI multiplataforma en GitHub Actions.",
+    ],
+    client: "La Calera / Automatización Operativa",
+    date: "2025 — 2026",
     featured: true,
   },
   {
