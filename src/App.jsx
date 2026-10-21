@@ -3,6 +3,7 @@ import { MotionConfig } from "framer-motion";
 import { HashRouter as Router, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import SkipLink from "./components/SkipLink";
 import CertificationsPage from "./pages/CertificationsPage";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
@@ -26,7 +27,7 @@ function MainContent() {
   }, [location.search, location.state]);
 
   return (
-    <main id="main-content">
+    <main id="main-content" tabIndex="-1">
       <section id="home"><HomePage /></section>
       <section id="experience" className="section-surface"><ResumePage /></section>
       <section id="projects"><ProjectsPage /></section>
@@ -42,7 +43,7 @@ function MainContent() {
 function SiteRoutes() {
   return (
     <div className="site-frame">
-      <a className="skip-link" href="#main-content">Saltar al contenido</a>
+      <SkipLink />
       <Header />
       <Routes>
         <Route path="/" element={<MainContent />} />

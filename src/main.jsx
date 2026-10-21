@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import '@fontsource-variable/manrope'
 import './index.css'
+import './styles/project-evidence.css'
 import App from './App.jsx'
 
 
