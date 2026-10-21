@@ -10,7 +10,7 @@ export default function RecommendationsPage() {
   return (
     <div className="section-shell section-block">
       <SectionIntro
-        eyebrow="Reseñas"
+        eyebrow="Recomendaciones y reconocimientos"
         title="El trabajo también se mide por la confianza que deja."
         description="Recomendaciones públicas y un reconocimiento corporativo que complementan la evidencia técnica."
       />

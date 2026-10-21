@@ -1,6 +1,7 @@
 import { createElement } from "react";
-import { BarChart3, Database, Workflow } from "lucide-react";
+import { ArrowUpRight, BarChart3, BrainCircuit, Database, Layers3, Workflow } from "lucide-react";
 import { motion as Motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   SiApachespark,
   SiBitbucket,
@@ -16,6 +17,9 @@ import {
   SiVercel,
 } from "react-icons/si";
 import SectionIntro from "../components/SectionIntro";
+import { capabilityGroups } from "../data/profile";
+
+const capabilityIcons = [Database, Workflow, BrainCircuit, Layers3];
 
 const tools = [
   { name: "Python", icon: SiPython },
@@ -53,9 +57,44 @@ export default function SkillsPage() {
     <div className="section-shell section-block section-block--compact">
       <SectionIntro
         eyebrow="Capacidades"
-        title="Herramientas que me acompañan de principio a fin."
-        description="Un stack construido a lo largo de mi carrera para conectar datos, operación, producto y entrega."
+        title="Especialidades conectadas de principio a fin."
+        description="No presento herramientas como una lista aislada: cada grupo explica qué problemas resuelvo y dónde puede verse aplicado."
       />
+
+      <div className="capability-grid">
+        {capabilityGroups.map((group, index) => {
+          const Icon = capabilityIcons[index];
+          return (
+            <Motion.article
+              className="capability-card"
+              key={group.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ delay: index * 0.04 }}
+            >
+              <div className="capability-card__heading">
+                <span><Icon aria-hidden="true" /></span>
+                <p>{group.eyebrow}</p>
+              </div>
+              <h3>{group.title}</h3>
+              <p>{group.description}</p>
+              <strong>{group.problem}</strong>
+              <div className="tag-list" aria-label={`Herramientas de ${group.title}`}>
+                {group.stack.map((item) => <span key={item}>{item}</span>)}
+              </div>
+              <Link to={`/projects/${group.projectId}`}>
+                Ver caso relacionado <ArrowUpRight size={16} />
+              </Link>
+            </Motion.article>
+          );
+        })}
+      </div>
+
+      <div className="tools-heading">
+        <p className="eyebrow">Stack transversal</p>
+        <span>Tecnologías utilizadas a lo largo de mi carrera.</span>
+      </div>
       <Motion.div
         className="tool-marquee"
         initial={{ opacity: 0, y: 18 }}

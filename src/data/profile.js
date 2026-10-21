@@ -8,7 +8,7 @@ export const profile = {
   phoneDisplay: "+51 907 362 779",
   headline: "Construyo sistemas de datos que las personas pueden entender y usar.",
   summary:
-    "Soy ingeniero de datos y creador de productos digitales. Convierto procesos complejos en soluciones confiables, medibles y preparadas para crecer.",
+    "Diseño plataformas de datos, automatizaciones y productos digitales que convierten procesos complejos en soluciones confiables, medibles y escalables.",
   links: {
     github: "https://github.com/LuisRomero20",
     linkedin: "https://www.linkedin.com/in/luisjesusromerocastro/",
@@ -62,7 +62,7 @@ export const experiences = [
     company: "LINKEO",
     role: "Co-Founder & Lead Full-Stack",
     period: "Ago. 2025 — Actualidad",
-    context: "Producto digital",
+    context: "Emprendimiento propio · Producto digital",
     summary:
       "Dirección técnica de un ecosistema de identidad digital y operación comercial basado en NFC y QR.",
     highlights: [
@@ -106,27 +106,39 @@ export const experiences = [
 export const capabilityGroups = [
   {
     title: "Data Engineering",
+    eyebrow: "Datos confiables",
     description:
       "Pipelines ETL/ELT, ingesta incremental, procesamiento distribuido y modelos listos para consumo analítico.",
     stack: ["Python", "SQL", "PySpark", "Spark SQL", "Pandas", "Dataproc"],
+    problem: "Conecto fuentes dispersas y convierto datos operativos en productos reproducibles y auditables.",
+    projectId: "sales-etl",
   },
   {
-    title: "DataOps & Observabilidad",
+    title: "DataOps y automatización",
+    eyebrow: "Operación observable",
     description:
       "Monitoreo de procesos críticos, análisis de causa raíz, mapeo de dependencias y automatización operativa.",
     stack: ["Control-M", "Flask", "Bash", "PowerShell", "Git", "Bitbucket"],
+    problem: "Reduzco trabajo manual y hago visibles los puntos de fallo antes de que afecten la operación.",
+    projectId: "calera-report",
   },
   {
-    title: "Calidad & Gobierno",
+    title: "AI y Machine Learning",
+    eyebrow: "Modelos con contexto",
     description:
-      "Controles preventivos, certificación técnica, diccionarios, metadatos y linaje auditable de extremo a extremo.",
-    stack: ["Data Quality", "Data Lineage", "Raw → Master", "SLA / ANS", "PR checks"],
+      "Modelos predictivos, experimentación reproducible y sistemas de IA con permisos, trazabilidad y control humano.",
+    stack: ["scikit-learn", "Prophet", "Python", "SVM", "Random Forest", "Human-in-the-loop"],
+    problem: "Aplico modelos cuando mejoran una decisión concreta y documento sus límites, evidencia y estado real.",
+    projectId: "viernes-ai-os",
   },
   {
-    title: "Analytics & Producto",
+    title: "Product Engineering",
+    eyebrow: "Producto digital",
     description:
-      "Dashboards, modelos predictivos y aplicaciones que convierten datos confiables en decisiones y experiencias útiles.",
-    stack: ["Power BI", "Streamlit", "scikit-learn", "React", "TypeScript", "Supabase"],
+      "Aplicaciones web, experiencias móviles e integraciones que conectan arquitectura, operación y necesidades comerciales.",
+    stack: ["React", "TypeScript", "Supabase", "Vercel", "Streamlit", "NFC / QR"],
+    problem: "Llevo una solución desde la idea hasta una experiencia que puede operarse, medirse y evolucionar.",
+    projectId: "linkeo",
   },
 ];
 

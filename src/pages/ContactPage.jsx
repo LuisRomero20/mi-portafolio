@@ -57,11 +57,16 @@ export default function ContactPage() {
             <a href={profile.links.linkedin} target="_blank" rel="noreferrer"><SiLinkedin /> LinkedIn</a>
             <a href={profile.links.github} target="_blank" rel="noreferrer"><SiGithub /> GitHub</a>
             <a href={profile.links.whatsapp} target="_blank" rel="noreferrer"><SiWhatsapp /> WhatsApp</a>
-            <a href={profile.links.instagram} target="_blank" rel="noreferrer"><SiInstagram /> Instagram</a>
-            <a href={profile.links.vsco} target="_blank" rel="noreferrer"><SiVsco /> VSCO</a>
-            <a href={profile.links.tiktok} target="_blank" rel="noreferrer"><SiTiktok /> TikTok</a>
-            <a href={profile.links.x} target="_blank" rel="noreferrer"><SiX /> X</a>
           </div>
+          <details className="contact-secondary">
+            <summary>Más presencia digital</summary>
+            <div>
+              <a href={profile.links.instagram} target="_blank" rel="noreferrer"><SiInstagram /> Instagram</a>
+              <a href={profile.links.vsco} target="_blank" rel="noreferrer"><SiVsco /> VSCO</a>
+              <a href={profile.links.tiktok} target="_blank" rel="noreferrer"><SiTiktok /> TikTok</a>
+              <a href={profile.links.x} target="_blank" rel="noreferrer"><SiX /> X</a>
+            </div>
+          </details>
         </Motion.div>
 
         <Motion.form
@@ -72,23 +77,24 @@ export default function ContactPage() {
           viewport={{ once: true }}
           transition={{ delay: 0.08 }}
         >
+          <input className="form-honeypot" type="text" name="_gotcha" tabIndex="-1" autoComplete="off" aria-hidden="true" />
           <div className="form-row">
             <label>
               Nombre
-              <input name="name" type="text" autoComplete="name" required placeholder="Tu nombre" />
+              <input name="name" type="text" autoComplete="name" required minLength="2" maxLength="80" placeholder="Tu nombre" />
             </label>
             <label>
               Correo
-              <input name="email" type="email" autoComplete="email" required placeholder="tu@empresa.com" />
+              <input name="email" type="email" autoComplete="email" required maxLength="120" placeholder="tu@empresa.com" />
             </label>
           </div>
           <label>
             Asunto
-            <input name="subject" type="text" required placeholder="¿En qué podemos colaborar?" />
+            <input name="subject" type="text" required minLength="4" maxLength="120" placeholder="¿En qué podemos colaborar?" />
           </label>
           <label>
             Mensaje
-            <textarea name="message" rows="6" required placeholder="Cuéntame brevemente el contexto, objetivo y próximos pasos." />
+            <textarea name="message" rows="6" required minLength="20" maxLength="2000" placeholder="Cuéntame brevemente el contexto, objetivo y próximos pasos." />
           </label>
           <div className="contact-form__footer">
             <p>Los datos se usan únicamente para responder este mensaje.</p>

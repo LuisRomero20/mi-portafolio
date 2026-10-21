@@ -7,7 +7,8 @@ const navLinks = [
   { id: "experience", label: "Experiencia" },
   { id: "projects", label: "Proyectos" },
   { id: "credentials", label: "Formación" },
-  { id: "recommendations", label: "Reseñas" },
+  { id: "skills", label: "Capacidades" },
+  { id: "recommendations", label: "Recomendaciones" },
 ];
 
 export default function Header() {
@@ -17,14 +18,29 @@ export default function Header() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    document.body.classList.toggle("menu-is-open", menuOpen);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.classList.remove("menu-is-open");
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     if (location.pathname !== "/") return undefined;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const current = entries.find((entry) => entry.isIntersecting);
+        const current = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (current) setActiveSection(current.target.id);
       },
-      { rootMargin: "-35% 0px -55%", threshold: 0 },
+      { rootMargin: "-28% 0px -58%", threshold: [0, 0.2, 0.45] },
     );
 
     navLinks.forEach(({ id }) => {
@@ -67,6 +83,8 @@ export default function Header() {
             Conversemos
           </button>
         </nav>
+
+        {menuOpen && <button className="nav-scrim" onClick={() => setMenuOpen(false)} aria-label="Cerrar menú" />}
 
         <button
           className="menu-toggle"

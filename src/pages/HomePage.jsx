@@ -35,7 +35,7 @@ export default function HomePage() {
           <Motion.p variants={reveal} className="hero-role">Data Engineer · Automation Builder · Product Mindset</Motion.p>
           <Motion.p variants={reveal} className="hero-summary">{profile.summary}</Motion.p>
           <Motion.div variants={reveal} className="hero-actions">
-            <button className="button-primary" onClick={() => scrollTo("experience")}>
+            <button className="button-primary" onClick={() => scrollTo("projects")}>
               Conoce mi trabajo <ArrowDown size={17} />
             </button>
             <a className="button-secondary" href={profile.links.cv} target="_blank" rel="noreferrer">
@@ -62,7 +62,14 @@ export default function HomePage() {
           transition={{ duration: 0.75, delay: 0.15 }}
         >
           <div className="hero-portrait__frame">
-            <img src={profileImg} alt="Luis Romero en un paisaje de montaña" fetchPriority="high" />
+            <img
+              src={profileImg}
+              alt="Luis Romero en un paisaje de montaña"
+              width="3762"
+              height="5906"
+              decoding="async"
+              fetchPriority="high"
+            />
           </div>
           <div className="hero-portrait__caption">
             <span>Lima, Perú</span>
@@ -73,7 +80,7 @@ export default function HomePage() {
         </Motion.div>
       </div>
 
-      <button className="scroll-cue" onClick={() => scrollTo("experience")} aria-label="Ir a experiencia">
+      <button className="scroll-cue" onClick={() => scrollTo("projects")} aria-label="Ir a proyectos">
         Recorrer mi trabajo <ArrowDown size={16} />
       </button>
     </div>

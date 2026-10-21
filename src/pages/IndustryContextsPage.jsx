@@ -1,9 +1,11 @@
+import { ArrowUpRight } from "lucide-react";
 import { motion as Motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import indraLogo from "../assets/images/Indra.jfif";
 import renovaLogo from "../assets/images/Renova.png";
 import miconLogo from "../assets/images/2micon.png";
 import SectionIntro from "../components/SectionIntro";
-import { industryContexts } from "../data/industryContexts";
+import { industryContexts, industryGroups } from "../data/industryContexts";
 
 const companies = [
   ...industryContexts.map(({ name, logo }) => ({ name, logo })),
@@ -30,9 +32,9 @@ export default function IndustryContextsPage() {
     <div className="section-block company-section">
       <div className="section-shell">
       <SectionIntro
-        eyebrow="Contexto profesional"
-        title="Empresas que forman parte de mi recorrido."
-        description="Banca, minería, industria, consultoría y producto digital: contextos donde aprendí a diseñar para la operación real."
+        eyebrow="Experiencia por industrias"
+        title="Diseño para contextos donde la operación importa."
+        description="Las marcas identifican una relación laboral, un cliente atendido desde un empleador o un proyecto documentado; cada caso aclara el vínculo real."
       />
       </div>
       <Motion.div
@@ -44,7 +46,27 @@ export default function IndustryContextsPage() {
         <CompanyTrack />
         <CompanyTrack hidden />
       </Motion.div>
-      <p className="section-shell company-note">Marcas vinculadas a experiencia profesional o proyectos documentados.</p>
+      <p className="section-shell company-note">Marcas vinculadas a experiencia profesional o proyectos documentados; no implican patrocinio del portafolio.</p>
+      <div className="section-shell industry-context-grid">
+        {industryGroups.map((group, index) => (
+          <Motion.article
+            key={group.title}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ delay: index * 0.04 }}
+          >
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <h3>{group.title}</h3>
+            <strong>{group.organizations}</strong>
+            <p>{group.relationship}</p>
+            <p>{group.contribution}</p>
+            {group.projectId ? (
+              <Link to={`/projects/${group.projectId}`}>Ver caso relacionado <ArrowUpRight size={16} /></Link>
+            ) : null}
+          </Motion.article>
+        ))}
+      </div>
     </div>
   );
 }

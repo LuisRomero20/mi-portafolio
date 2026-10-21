@@ -1,14 +1,31 @@
+import { useMemo, useState } from "react";
 import { ArrowUpRight, Award, BookOpen, FileText, GraduationCap } from "lucide-react";
 import { motion as Motion } from "framer-motion";
 import ransomwareImg from "../assets/images/RasomwarePerfil.png";
 import SectionIntro from "../components/SectionIntro";
-import { complementaryCredentials, principalCredentials } from "../data/certifications";
+import { complementaryCredentials, principalCredentials, programAccreditation } from "../data/certifications";
 
 const credentialHref = (url) => (
   url.startsWith("/") ? `${import.meta.env.BASE_URL}${url.slice(1)}` : url
 );
 
 export default function CertificationsPage() {
+  const filters = ["Todos", "Datos", "Software", "Agile", "Diseño y producto", "Otros"];
+  const [activeFilter, setActiveFilter] = useState("Todos");
+  const filteredCredentials = useMemo(() => {
+    if (activeFilter === "Todos") return complementaryCredentials;
+
+    const categoryMap = {
+      Datos: ["Data Engineering", "Data Science"],
+      Software: ["Software", "DevOps"],
+      Agile: ["Agile"],
+      "Diseño y producto": ["Diseño / UX", "Productividad"],
+      Otros: ["Blockchain", "Educación"],
+    };
+
+    return complementaryCredentials.filter((credential) => categoryMap[activeFilter]?.includes(credential.category));
+  }, [activeFilter]);
+
   return (
     <div className="section-shell section-block">
       <SectionIntro
@@ -28,6 +45,9 @@ export default function CertificationsPage() {
           <span>Universidad Peruana de Ciencias Aplicadas · 2020 — 2024</span>
           <h3>Bachiller en Ingeniería de Sistemas de Información</h3>
           <p>Programa acreditado por ABET, con formación en arquitectura de software, datos, analítica, gestión tecnológica e investigación aplicada.</p>
+          <a className="education-card__accreditation" href={programAccreditation.credentialUrl} target="_blank" rel="noreferrer">
+            {programAccreditation.title} <ArrowUpRight size={14} />
+          </a>
         </div>
         <a href={`${import.meta.env.BASE_URL}papers/Constancia de Bachiller.pdf`} target="_blank" rel="noreferrer">
           Ver constancia <ArrowUpRight size={16} />
@@ -46,11 +66,11 @@ export default function CertificationsPage() {
         <div className="research-feature__copy">
           <p className="eyebrow">Publicación científica · IJACSA 2024</p>
           <h3>Machine Learning para detectar ransomware en entornos con recursos limitados.</h3>
-          <p>Trabajo indexado en Scopus que evalúa modelos supervisados y reporta precisión superior al 90% en el estudio.</p>
+          <p>Artículo de Luis Jesús Romero Castro, Piero Alexander Cruz Aquino y Fidel Eugenio Garcia Rojas. Evalúa modelos supervisados en escenarios controlados y documenta sus límites para microempresas.</p>
           <div className="research-stats">
-            <span><strong>&gt;90%</strong> precisión reportada</span>
-            <span><strong>−70%</strong> tiempo de respuesta</span>
-            <span><strong>Scopus</strong> publicación indexada</span>
+            <span><strong>&gt;90%</strong> detección en entorno controlado</span>
+            <span><strong>−70%</strong> respuesta en pruebas simuladas</span>
+            <span><strong>DOI</strong> 10.14569/IJACSA.2024.0151253</span>
           </div>
           <div className="inline-actions">
             <a className="button-primary" href="https://dx.doi.org/10.14569/IJACSA.2024.0151253" target="_blank" rel="noreferrer">
@@ -100,8 +120,21 @@ export default function CertificationsPage() {
           </span>
           <span>Explorar credenciales <ArrowUpRight aria-hidden="true" /></span>
         </summary>
-        <div className="complementary-credentials__grid">
-          {complementaryCredentials.map((certification) => (
+        <div className="credential-filters" aria-label="Filtrar formación complementaria">
+          {filters.map((filter) => (
+            <button
+              type="button"
+              key={filter}
+              className={activeFilter === filter ? "is-active" : ""}
+              onClick={() => setActiveFilter(filter)}
+              aria-pressed={activeFilter === filter}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
+        <div className="complementary-credentials__grid" aria-live="polite">
+          {filteredCredentials.map((certification) => (
             <a
               key={certification.id}
               href={credentialHref(certification.credentialUrl)}

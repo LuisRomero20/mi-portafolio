@@ -12,14 +12,15 @@ import finanzas2 from "../assets/images/Finanzas2.png";
 import finanzas3 from "../assets/images/Finanzas3.png";
 import ransomwarePerfil from "../assets/images/RasomwarePerfil.png";
 import viernesImg from "../assets/images/viernes-ai-os.jpg";
-import laCaleraLogo from "../assets/brands/la-calera.png";
 import caleraPerfil from "../assets/images/CaleraPerfil.png";
 
 export const projects = [
   {
     id: "sales-etl",
-    name: "Plataforma de inteligencia comercial y forecasting",
+    order: 1,
+    name: "Sales ETL — Pipeline comercial y forecasting",
     shortName: "Sales ETL",
+    status: "Caso técnico funcional",
     category: "Data Engineering",
     eyebrow: "Pipeline end-to-end",
     priorityLabel: "Caso principal",
@@ -44,6 +45,13 @@ export const projects = [
       "Forecasting a 30 días con ejecución reproducible.",
       "Publicación de KPIs mediante Streamlit y Power BI.",
     ],
+    architecture: [
+      "Archivos de ventas → validación de esquema y calidad.",
+      "Transformaciones reproducibles y persistencia incremental en SQLite.",
+      "Forecasting con Prophet sobre series preparadas.",
+      "Publicación de indicadores en Streamlit y Power BI.",
+    ],
+    evidence: ["Repositorio público", "Demo funcional en Streamlit", "Capturas reales del dashboard"],
     dashboardGallery: [etlImg1, etlImg2],
     client: "Proyecto personal",
     date: "Caso técnico",
@@ -52,15 +60,17 @@ export const projects = [
   },
   {
     id: "calera-report",
-    name: "CaleraReport — Enterprise Document Automation & SAP Integration",
+    order: 2,
+    name: "CaleraReport — Automatización documental y SAP",
     shortName: "CaleraReport",
+    status: "Demo técnica verificable",
     category: "Automatización & Controles",
-    eyebrow: "Document Engineering · Fail-Closed SAP · Financial Controls",
-    priorityLabel: "Caso Enterprise Destacado",
+    eyebrow: "Automatización documental · Controles SAP",
+    priorityLabel: "Automatización empresarial",
     description:
-      "Plataforma de ingeniería documental y preparación contable que concilia expedientes multisede (HES, OC, Factura/RXH, SOLPED), genera el Maestro de Control A–W con fórmulas vivas y automatiza la contabilización SAP MIRO bajo controles fail-closed.",
+      "Flujo local que concilia expedientes, genera un maestro de control y prepara la operación SAP MIRO con validaciones bloqueantes antes de cualquier ejecución.",
     longDescription:
-      "Transformación integral de CaleraReport a una suite de operaciones documentales y control financiero empresarial. Procesa expedientes en cliente garantizando cero fuga de datos sensibles, aplica validaciones deterministas de importes y semáforos de liberación de tres niveles, gestiona trazabilidad con hash SHA-256 para renombrado y reversión, e implementa tres alternativas de automatización SAP MIRO con simulación obligatoria y rechazo ante ambigüedad.",
+      "CaleraReport organiza un proceso documental con información sensible sin exponer archivos empresariales en esta demostración. La solución aplica reglas de conciliación, genera un libro maestro con incidencias y prepara alternativas de integración con SAP MIRO que se detienen ante datos incompletos o ambiguos.",
     technologies: [
       "Python 3.11",
       "SAP GUI Scripting",
@@ -75,10 +85,10 @@ export const projects = [
     github: "https://github.com/LuisRomero20/CaleraReport",
     demo: "https://calerareport-ten.vercel.app",
     metrics: {
-      "Conciliación": "100% determinista",
-      "Privacidad": "Zero Data Leak",
-      "Controles SAP": "Fail-Closed estricto",
-      "Validación": "21 tests / CI",
+      "Procesamiento": "Local",
+      "Conciliación": "Reglas reproducibles",
+      "Control SAP": "Parada ante ambigüedad",
+      "Validación": "Suite automatizada",
     },
     context: {
       problem:
@@ -86,7 +96,7 @@ export const projects = [
       solution:
         "Un motor de conciliación documental local (navegador y Python) con validación de tolerancias, generación del Maestro A–W con fórmulas Excel vivas, gestión de incidencias bloqueantes y tres bots SAP con parada fail-closed y aprobación afirmativa obligatoria.",
       impact:
-        "Ciclo de procesamiento reducido de días a segundos por lote, trazabilidad forense con reversión instantánea y garantía de tolerancia cero a registros ambiguos o desbalanceados en el ERP.",
+        "Una demostración reproducible para reducir pasos manuales, documentar incidencias y evitar que registros ambiguos continúen hacia el ERP sin revisión.",
     },
     featuresTitle: "Capacidades Enterprise Operativas",
     features: [
@@ -96,16 +106,27 @@ export const projects = [
       "Generación de libro Maestro A–W con fórmulas vivas, semáforos condicionales y hoja de incidencias.",
       "Certificado Formal de Conciliación y Control Interno imprimible con hash criptográfico SHA-256.",
       "Integración SAP GUI fail-closed: aprobación afirmativa obligatoria, verificación de saldo 0.00 y validación de 10 dígitos.",
-      "Suite de 21 pruebas automatizadas con fixtures 100% sintéticos y CI multiplataforma en GitHub Actions.",
+      "Suite automatizada con datos sintéticos y ejecución continua en GitHub Actions.",
     ],
+    architecture: [
+      "Carga local de expedientes y normalización de documentos.",
+      "Motor de reglas para conciliación, tolerancias e incidencias.",
+      "Maestro A–W y certificado de control como salidas auditables.",
+      "Preparación SAP MIRO con simulación y aprobación explícita.",
+    ],
+    evidence: ["Demo pública con datos sintéticos", "Repositorio y CI públicos", "Dossier y certificado imprimibles"],
+    statusNote:
+      "La demostración pública utiliza expedientes sintéticos. No expone documentos, proveedores ni credenciales de los entornos empresariales relacionados.",
     client: "La Calera / Automatización Operativa",
     date: "2025 — 2026",
     featured: true,
   },
   {
     id: "viernes-ai-os",
-    name: "Sistema operativo personal con IA y control humano",
+    order: 3,
+    name: "Viernes AI OS — Orquestación con control humano",
     shortName: "Viernes AI OS",
+    status: "Arquitectura en desarrollo",
     category: "AI Engineering",
     eyebrow: "Sistema personal · En desarrollo",
     priorityLabel: "AI Engineering en desarrollo",
@@ -132,6 +153,18 @@ export const projects = [
       "AI Gateway independiente del proveedor y registro auditable de acciones.",
       "Integración progresiva con Calendar, Gmail, Notion, GitHub y un agente local.",
     ],
+    architecture: [
+      "Núcleo de IA desacoplado del proveedor de modelos.",
+      "Memoria personal consultable y corregible.",
+      "Capa de integraciones con permisos y registro de acciones.",
+      "Agente local de Windows para capacidades aprobadas por el usuario.",
+    ],
+    delivery: {
+      "Diseñado": ["Arquitectura personal-first", "Modelo de permisos", "Memoria gobernada por el usuario"],
+      "En validación": ["Home diario", "Orquestación de tareas", "Registro auditable"],
+      "Roadmap": ["Canales móviles", "Integraciones externas", "Agente local para Windows"],
+    },
+    evidence: ["Arquitectura y roadmap documentados", "Estado de implementación pendiente de validación reproducible"],
     statusNote:
       "La arquitectura, el roadmap y el alcance están documentados. Las funcionalidades implementadas continúan pendientes de validación técnica reproducible.",
     client: "Producto personal",
@@ -140,8 +173,10 @@ export const projects = [
   },
   {
     id: "skynet-quant",
-    name: "Motor predictivo y auditable para analítica deportiva",
+    order: 5,
+    name: "Skynet Quant — Analítica deportiva auditable",
     shortName: "Skynet Quant",
+    status: "Laboratorio funcional",
     category: "Machine Learning",
     eyebrow: "Modelado cuantitativo",
     priorityLabel: "ML aplicado",
@@ -160,14 +195,23 @@ export const projects = [
       impact: "Exploración más rápida y decisiones documentadas con trazabilidad sobre las predicciones realizadas.",
     },
     dashboardGallery: [skynetMain, skynetImg1, skynetImg2, skynetImg3],
+    architecture: [
+      "Preparación de históricos y variables de partido.",
+      "Comparación entre modelos Poisson y clasificadores de machine learning.",
+      "Registro de predicción, resultado y contexto de ejecución.",
+      "Interfaz Streamlit para exploración y auditoría.",
+    ],
+    evidence: ["Repositorio público", "Demo Streamlit", "Capturas de módulos y resultados"],
     client: "Proyecto personal",
     date: "En evolución",
     featured: true,
   },
   {
     id: "linkeo",
-    name: "Ecosistema de identidad digital con NFC y QR",
+    order: 4,
+    name: "LINKEO — Identidad digital con NFC y QR",
     shortName: "LINKEO",
+    status: "Producto en producción",
     category: "Producto digital",
     eyebrow: "Co-Founder & Lead Full-Stack",
     priorityLabel: "Producto en producción",
@@ -177,6 +221,7 @@ export const projects = [
       "LINKEO conecta tarjetas inteligentes con perfiles digitales editables y una operación comercial preparada para crecer. Mi trabajo abarca la arquitectura del producto, el desarrollo full-stack y el despliegue de la experiencia pública.",
     technologies: ["React 19", "TypeScript", "Supabase", "Vercel", "NFC / QR"],
     image: null,
+    visualVariant: "linkeo",
     accent: "violet",
     github: "",
     demo: "https://linkeocards.com/",
@@ -186,6 +231,13 @@ export const projects = [
       solution: "Una identidad digital editable, activada desde una tarjeta física y respaldada por una arquitectura web moderna.",
       impact: "Una experiencia de contacto coherente y una base tecnológica que permite operar, medir y ampliar el producto.",
     },
+    architecture: [
+      "Tarjeta NFC o código QR como punto de entrada.",
+      "Perfil digital editable y optimizado para interacción móvil.",
+      "Persistencia y autenticación sobre Supabase.",
+      "Despliegue web y operación comercial sobre Vercel.",
+    ],
+    evidence: ["Web pública operativa", "Perfiles digitales en producción", "Operación comercial documentada"],
     client: "Emprendimiento propio",
     date: "2025 — Actualidad",
     featured: true,
@@ -193,8 +245,10 @@ export const projects = [
   {
     id: "finanzas-personales",
     legacyIds: ["finper"],
-    name: "Plataforma personal de planificación financiera",
+    order: 6,
+    name: "Finanzas Personales — Planificación financiera",
     shortName: "Finanzas Personales",
+    status: "En auditoría técnica",
     category: "Aplicación personal",
     eyebrow: "Producto personal · En auditoría",
     priorityLabel: "Producto independiente",
@@ -215,14 +269,23 @@ export const projects = [
     dashboardGallery: [finanzas1, finanzas2, finanzas3],
     statusNote:
       "Finanzas Personales y FinPer son proyectos distintos. Esta ficha corresponde exclusivamente al repositorio Finanzas.",
+    architecture: [
+      "Cliente web y móvil construido con React y Capacitor.",
+      "Estado de producto organizado con Zustand.",
+      "Persistencia y sincronización previstas sobre Supabase.",
+      "Visualización de escenarios mediante Recharts.",
+    ],
+    evidence: ["Repositorio público", "Capturas reales de módulos", "Cobertura funcional pendiente de auditoría completa"],
     client: "Producto personal",
     date: "En revisión",
     featured: true,
   },
   {
     id: "ransomware-ml",
+    order: 7,
     name: "ML para detección de ransomware",
     shortName: "Ransomware ML",
+    status: "Investigación publicada",
     category: "Investigación",
     eyebrow: "Artículo indexado · IJACSA 2024",
     priorityLabel: "Investigación publicada",
@@ -237,12 +300,13 @@ export const projects = [
     pdfUrl: "/papers/ransomware.pdf",
     citation:
       "Luis Jesús Romero Castro, Piero Alexander Cruz Aquino y Fidel Eugenio Garcia Rojas. International Journal of Advanced Computer Science and Applications, 15(12), 2024.",
-    metrics: { Precisión: "> 90%", Respuesta: "Hasta −70%", Publicación: "IJACSA · Scopus" },
+    metrics: { Precisión: "> 90% en entorno controlado", Respuesta: "−70% en pruebas simuladas", Publicación: "IJACSA · Scopus" },
     context: {
       problem: "Las microempresas suelen carecer de recursos para implementar plataformas avanzadas de protección contra ransomware.",
       solution: "Diseño y validación experimental de modelos supervisados capaces de detectar comportamiento malicioso con una arquitectura ligera.",
       impact: "Resultados de investigación con precisión superior al 90% y reducción reportada de hasta 70% en tiempo de respuesta.",
     },
+    evidence: ["Artículo completo", "DOI público", "Tablas de validación y prueba del estudio"],
     client: "Investigación académica · UPC",
     date: "Diciembre 2024",
     featured: true,

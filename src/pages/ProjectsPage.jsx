@@ -4,7 +4,24 @@ import SectionIntro from "../components/SectionIntro";
 import { projects } from "../data/projects";
 
 export default function ProjectsPage() {
-  const portfolioProjects = projects.filter((project) => project.category !== "Investigación");
+  const portfolioProjects = projects
+    .filter((project) => project.category !== "Investigación")
+    .sort((a, b) => a.order - b.order);
+  const mainProjects = portfolioProjects.filter((project) => project.order <= 4);
+  const additionalProjects = portfolioProjects.filter((project) => project.order > 4);
+
+  const renderProject = (project, index) => (
+    <Motion.div
+      key={project.id}
+      className={project.lead ? "project-grid-item project-grid-item--lead" : "project-grid-item"}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ delay: (index % 2) * 0.08 }}
+    >
+      <ProjectCard project={project} />
+    </Motion.div>
+  );
 
   return (
     <div className="section-shell section-block">
@@ -15,18 +32,17 @@ export default function ProjectsPage() {
       />
 
       <div className="projects-grid">
-        {portfolioProjects.map((project, index) => (
-          <Motion.div
-            key={project.id}
-            className={project.lead ? "project-grid-item project-grid-item--lead" : "project-grid-item"}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ delay: (index % 2) * 0.08 }}
-          >
-            <ProjectCard project={project} />
-          </Motion.div>
-        ))}
+        {mainProjects.map(renderProject)}
+      </div>
+
+      <div className="projects-subsection">
+        <p className="eyebrow">Sistemas en evolución</p>
+        <h3>Más trabajo aplicado y auditable.</h3>
+        <p>Proyectos complementarios con repositorio, demo o evidencia visual disponible y un estado explicado sin sobreprometer.</p>
+      </div>
+
+      <div className="projects-grid projects-grid--secondary">
+        {additionalProjects.map(renderProject)}
       </div>
     </div>
   );

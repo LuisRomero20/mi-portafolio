@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowUpRight, CheckCircle2, ExternalLink, Github, Info, X } from "lucide-react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
+import ProjectVisual from "../components/ProjectVisual";
 import { projects } from "../data/projects";
 
 export default function ProjectDetailPage() {
@@ -19,6 +20,20 @@ export default function ProjectDetailPage() {
     window.scrollTo({ top: 0, behavior: "instant" });
     setActiveImage(0);
   }, [id]);
+
+  useEffect(() => {
+    const defaultTitle = "Luis Romero · Data Engineering & AI Applied";
+    const description = document.querySelector('meta[name="description"]');
+    const defaultDescription = "Portafolio de Luis Romero: ingeniería de datos, automatización, producto digital e IA aplicada.";
+
+    document.title = project ? `${project.shortName} · Luis Romero` : defaultTitle;
+    if (description) description.setAttribute("content", project?.description || defaultDescription);
+
+    return () => {
+      document.title = defaultTitle;
+      if (description) description.setAttribute("content", defaultDescription);
+    };
+  }, [project]);
 
   useEffect(() => {
     if (!lightboxOpen) return undefined;
@@ -43,10 +58,8 @@ export default function ProjectDetailPage() {
     );
   }
 
-  const initials = project.shortName.split(" ").map((word) => word[0]).join("").slice(0, 3);
-
   return (
-    <main className="project-detail">
+    <main id="main-content" className="project-detail">
       <AnimatePresence>
         {lightboxOpen && galleryImages[activeImage] && (
           <Motion.div
@@ -98,9 +111,7 @@ export default function ProjectDetailPage() {
             )}
           </>
         ) : (
-          <div className={`project-detail__fallback project-card__fallback--${project.accent || "blue"}`}>
-            <span>{initials}</span><p>{project.shortName}</p>
-          </div>
+          <div className="project-detail__fallback"><ProjectVisual project={project} detailed /></div>
         )}
       </div>
 
@@ -125,6 +136,37 @@ export default function ProjectDetailPage() {
               </div>
             </section>
           ) : null}
+          {(project.architecture?.length || project.evidence?.length) ? (
+            <section className="project-proof-grid" aria-label="Arquitectura y evidencia">
+              {project.architecture?.length ? (
+                <article>
+                  <p className="eyebrow">Arquitectura</p>
+                  <h3>Cómo fluye la solución</h3>
+                  <ol>{project.architecture.map((item) => <li key={item}>{item}</li>)}</ol>
+                </article>
+              ) : null}
+              {project.evidence?.length ? (
+                <article>
+                  <p className="eyebrow">Evidencia disponible</p>
+                  <h3>Qué puede verificarse</h3>
+                  <ul>{project.evidence.map((item) => <li key={item}>{item}</li>)}</ul>
+                </article>
+              ) : null}
+            </section>
+          ) : null}
+          {project.delivery ? (
+            <section className="project-delivery">
+              <p className="eyebrow">Estado real del producto</p>
+              <div>
+                {Object.entries(project.delivery).map(([label, items]) => (
+                  <article key={label}>
+                    <h3>{label}</h3>
+                    <ul>{items.map((item) => <li key={item}>{item}</li>)}</ul>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
           {project.statusNote ? (
             <div className="project-status-note"><Info aria-hidden="true" /><p>{project.statusNote}</p></div>
           ) : null}
@@ -134,7 +176,8 @@ export default function ProjectDetailPage() {
         </div>
 
         <aside className="project-facts">
-          <div><span>Tipo</span><strong>{project.client}</strong></div>
+          <div><span>Contexto</span><strong>{project.client}</strong></div>
+          <div><span>Estado</span><strong>{project.status}</strong></div>
           {Object.entries(project.metrics).map(([label, value]) => (
             <div key={label}><span>{label}</span><strong>{value}</strong></div>
           ))}

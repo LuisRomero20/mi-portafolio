@@ -40,14 +40,6 @@ export const principalCredentials = [
     category: "Programación",
   },
   {
-    id: "abet-program-graduate",
-    title: "ABET Program Graduate",
-    issuer: "Programa académico acreditado · UPC",
-    date: "Diciembre 2025",
-    credentialUrl: "https://www.credly.com/go/Z4b0FYeM",
-    category: "Acreditación",
-  },
-  {
     id: "spark-sql",
     title: "Distributed Computing with Spark SQL",
     issuer: "University of California, Davis · Coursera",
@@ -64,6 +56,13 @@ export const principalCredentials = [
     category: "Idiomas",
   },
 ];
+
+export const programAccreditation = {
+  title: "Programa de Ingeniería de Sistemas de Información acreditado por ABET",
+  issuer: "Universidad Peruana de Ciencias Aplicadas",
+  date: "Acreditación del programa académico",
+  credentialUrl: "https://www.credly.com/go/Z4b0FYeM",
+};
 
 export const complementaryCredentials = [
   {

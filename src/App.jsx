@@ -12,7 +12,6 @@ import ProjectsPage from "./pages/ProjectsPage";
 import RecommendationsPage from "./pages/RecommendationsPage";
 import ResumePage from "./pages/ResumePage";
 import SkillsPage from "./pages/SkillsPage";
-import "./App.css";
 
 function MainContent() {
   const location = useLocation();
@@ -27,7 +26,7 @@ function MainContent() {
   }, [location.search, location.state]);
 
   return (
-    <main>
+    <main id="main-content">
       <section id="home"><HomePage /></section>
       <section id="experience" className="section-surface"><ResumePage /></section>
       <section id="projects"><ProjectsPage /></section>
@@ -43,6 +42,7 @@ function MainContent() {
 function SiteRoutes() {
   return (
     <div className="site-frame">
+      <a className="skip-link" href="#main-content">Saltar al contenido</a>
       <Header />
       <Routes>
         <Route path="/" element={<MainContent />} />
