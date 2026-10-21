@@ -12,17 +12,18 @@ import finanzas2 from "../assets/images/Finanzas2.png";
 import finanzas3 from "../assets/images/Finanzas3.png";
 import ransomwarePerfil from "../assets/images/RasomwarePerfil.png";
 import viernesImg from "../assets/images/viernes-ai-os.jpg";
+import laCaleraLogo from "../assets/brands/la-calera.png";
 
 export const projects = [
   {
     id: "sales-etl",
-    name: "ETL & Forecasting de Ventas",
+    name: "Plataforma de inteligencia comercial y forecasting",
     shortName: "Sales ETL",
     category: "Data Engineering",
     eyebrow: "Pipeline end-to-end",
     priorityLabel: "Caso principal",
     description:
-      "Pipeline reproducible que limpia ventas, ejecuta cargas incrementales y proyecta ingresos a 30 días.",
+      "Pipeline end-to-end que depura y consolida ventas, automatiza cargas incrementales y proyecta ingresos a 30 días para acelerar decisiones comerciales.",
     longDescription:
       "Caso técnico de ingeniería y análisis de datos que transforma archivos con errores e inconsistencias en un flujo reproducible. El proceso limpia la información, entrena un modelo de forecasting y publica indicadores en una interfaz web.",
     technologies: ["Python", "Prophet", "SQLite", "Streamlit", "Power BI", "PowerShell"],
@@ -50,13 +51,13 @@ export const projects = [
   },
   {
     id: "calera-report",
-    name: "CaleraReport · Automatización SAP",
+    name: "Automatización de conciliación y carga para SAP",
     shortName: "CaleraReport",
     category: "Automatización",
     eyebrow: "Automation & Data Engineering",
     priorityLabel: "Automatización aplicada",
     description:
-      "Consolidador de archivos de pago y automatización de plantillas para ordenar un proceso asociado a SAP.",
+      "Solución por lotes que valida, consolida y estandariza archivos de pago antes de SAP, reduciendo tareas manuales y riesgo de reprocesos.",
     longDescription:
       "Solución enfocada en ordenar archivos de múltiples áreas, validar su estructura y preparar cargas repetibles. Complementa el flujo con automatización de escritorio para disminuir tareas mecánicas y errores de transcripción.",
     technologies: ["Python", "SAP GUI Scripting", "VBScript", "RPA", "JavaScript"],
@@ -76,13 +77,13 @@ export const projects = [
   },
   {
     id: "viernes-ai-os",
-    name: "Viernes · Personal AI Operating System",
+    name: "Sistema operativo personal con IA y control humano",
     shortName: "Viernes AI OS",
     category: "AI Engineering",
     eyebrow: "Sistema personal · En desarrollo",
     priorityLabel: "AI Engineering en desarrollo",
     description:
-      "Arquitectura personal-first para coordinar tareas, calendario, memoria, agentes e integraciones con control humano.",
+      "Arquitectura personal-first que conecta tareas, calendario, memoria y agentes bajo permisos explícitos, trazabilidad y control del usuario.",
     longDescription:
       "Viernes es un producto personal en desarrollo y un laboratorio de AI Engineering. Su arquitectura documentada plantea una experiencia mobile-first, un núcleo cloud, memoria corregible y un agente local para Windows, con permisos explícitos y trazabilidad para cualquier acción que cambie sistemas externos.",
     technologies: ["Python", "React", "TypeScript", "SQLite"],
@@ -112,13 +113,13 @@ export const projects = [
   },
   {
     id: "skynet-quant",
-    name: "Skynet Quant · Analítica deportiva",
+    name: "Motor predictivo y auditable para analítica deportiva",
     shortName: "Skynet Quant",
     category: "Machine Learning",
     eyebrow: "Modelado cuantitativo",
     priorityLabel: "ML aplicado",
     description:
-      "Laboratorio que combina modelos Poisson y aprendizaje automático para explorar predicciones trazables.",
+      "Plataforma que combina modelos Poisson y machine learning sobre históricos para comparar probabilidades, registrar predicciones y auditar resultados.",
     longDescription:
       "Laboratorio de analítica cuantitativa que integra datos históricos, modelos de clasificación y probabilidades de goles. La aplicación permite comparar predicciones con resultados y mantener una auditoría clara de cada ejecución.",
     technologies: ["Python", "Streamlit", "scikit-learn", "SQLite", "Pandas"],
@@ -138,13 +139,13 @@ export const projects = [
   },
   {
     id: "linkeo",
-    name: "LINKEO · Identidad digital NFC",
+    name: "Ecosistema de identidad digital con NFC y QR",
     shortName: "LINKEO",
     category: "Producto digital",
     eyebrow: "Co-Founder & Lead Full-Stack",
     priorityLabel: "Producto en producción",
     description:
-      "Ecosistema de tarjetas NFC y QR que convierte una interacción física en un perfil digital administrable.",
+      "Producto en producción que conecta tarjetas inteligentes con perfiles editables y una operación comercial preparada para medir, administrar y escalar.",
     longDescription:
       "LINKEO conecta tarjetas inteligentes con perfiles digitales editables y una operación comercial preparada para crecer. Mi trabajo abarca la arquitectura del producto, el desarrollo full-stack y el despliegue de la experiencia pública.",
     technologies: ["React 19", "TypeScript", "Supabase", "Vercel", "NFC / QR"],
@@ -165,13 +166,13 @@ export const projects = [
   {
     id: "finanzas-personales",
     legacyIds: ["finper"],
-    name: "Finanzas Personales · Gestión financiera",
+    name: "Plataforma personal de planificación financiera",
     shortName: "Finanzas Personales",
     category: "Aplicación personal",
     eyebrow: "Producto personal · En auditoría",
     priorityLabel: "Producto independiente",
     description:
-      "Aplicación para organizar deudas, tasas, presupuestos y cronogramas; actualmente en revisión funcional y técnica.",
+      "Aplicación web y móvil que centraliza deudas, tasas, presupuestos y cronogramas para visualizar compromisos y evaluar escenarios con mayor claridad.",
     longDescription:
       "Finanzas Personales centraliza obligaciones y cálculos financieros en una experiencia web y móvil. El proyecto correcto vive en el repositorio Finanzas y es independiente de FinPer; su estado actual está siendo auditado antes de presentar funcionalidades como verificadas.",
     technologies: ["React", "TypeScript", "Supabase", "Zustand", "Capacitor", "Recharts"],

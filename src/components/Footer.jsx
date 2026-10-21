@@ -1,17 +1,9 @@
-import { ArrowUpRight } from "lucide-react";
 import { SiGithub, SiInstagram, SiLinkedin, SiWhatsapp } from "react-icons/si";
 import { profile } from "../data/profile";
 
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <div className="section-shell site-footer__cta">
-        <p className="eyebrow">¿Construimos algo confiable?</p>
-        <a href={`mailto:${profile.email}?subject=Oportunidad%20profesional%20%7C%20Luis%20Romero`}>
-          {profile.email}
-          <ArrowUpRight aria-hidden="true" />
-        </a>
-      </div>
       <div className="section-shell site-footer__bottom">
         <div>
           <strong>{profile.shortName}</strong>

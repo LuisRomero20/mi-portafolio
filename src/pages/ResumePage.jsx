@@ -19,8 +19,8 @@ export default function ResumePage() {
       <div className="experience-heading">
         <SectionIntro
           eyebrow="Experiencia"
-          title="Experiencia construida desde la operación real."
-          description="Una progresión desde desarrollo y analítica hacia automatización industrial, operación de datos críticos y construcción de producto."
+          title="He crecido resolviendo problemas reales."
+          description="De desarrollo y analítica a automatización industrial, plataformas de datos y construcción de producto."
         />
         <a className="button-secondary" href={profile.links.cv} target="_blank" rel="noreferrer">
           CV completo <Download size={17} />
@@ -28,7 +28,7 @@ export default function ResumePage() {
       </div>
 
       <div className="experience-list">
-        {experiences.map((experience, index) => (
+        {experiences.map((experience) => (
           <Motion.article
             className="experience-item"
             key={`${experience.company}-${experience.role}`}
@@ -36,7 +36,6 @@ export default function ResumePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="experience-item__index">0{index + 1}</div>
             <div className={`experience-item__logo experience-item__logo--${experience.logo}`}>
               {logos[experience.logo]}
             </div>

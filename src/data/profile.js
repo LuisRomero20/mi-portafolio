@@ -6,9 +6,9 @@ export const profile = {
   email: "luis_jesusrc@hotmail.com",
   phone: "+51907362779",
   phoneDisplay: "+51 907 362 779",
-  headline: "Transformo datos en sistemas inteligentes que impulsan decisiones y automatizan procesos.",
+  headline: "Construyo sistemas de datos que las personas pueden entender y usar.",
   summary:
-    "Ingeniería de datos, automatización y tecnología aplicada para construir sistemas confiables, eficientes y escalables.",
+    "Soy ingeniero de datos y creador de productos digitales. Convierto procesos complejos en soluciones confiables, medibles y preparadas para crecer.",
   links: {
     github: "https://github.com/LuisRomero20",
     linkedin: "https://www.linkedin.com/in/luisjesusromerocastro/",
@@ -47,7 +47,7 @@ export const experiences = [
     company: "Indra / Minsait",
     role: "Ingeniero de Datos Jr",
     period: "Mar. 2025 — Actualidad",
-    context: "Servicios para el sector financiero",
+    context: "Cliente: BBVA · Servicios para el sector financiero",
     summary:
       "Confiabilidad batch, aseguramiento de calidad y gobierno del dato en un entorno regulado y de alta criticidad.",
     highlights: [

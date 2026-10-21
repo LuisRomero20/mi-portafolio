@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function ProjectCard({ project, index }) {
+export default function ProjectCard({ project }) {
   const initials = project.shortName
     .split(" ")
     .map((word) => word[0])
@@ -19,7 +19,6 @@ export default function ProjectCard({ project, index }) {
             <div aria-hidden="true" className="project-card__grid" />
           </div>
         )}
-        <span className="project-card__number">0{index + 1}</span>
         <span className="project-card__arrow"><ArrowUpRight size={20} /></span>
         <span className="project-card__badge">{project.priorityLabel}</span>
       </Link>

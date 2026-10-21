@@ -4,16 +4,18 @@ import SectionIntro from "../components/SectionIntro";
 import { projects } from "../data/projects";
 
 export default function ProjectsPage() {
+  const portfolioProjects = projects.filter((project) => project.category !== "Investigación");
+
   return (
     <div className="section-shell section-block">
       <SectionIntro
-        eyebrow="Trabajo seleccionado"
-        title="Ingeniería aplicada: del pipeline al sistema inteligente."
-        description="Casos priorizados por relevancia profesional. Cada ficha distingue el tipo de trabajo, el estado real y la evidencia disponible."
+        eyebrow="Proyectos"
+        title="Sistemas que ya pasaron de la idea a la práctica."
+        description="Una selección de productos y automatizaciones explicados por el problema que resuelven, la decisión técnica y el valor que pueden generar."
       />
 
       <div className="projects-grid">
-        {projects.map((project, index) => (
+        {portfolioProjects.map((project, index) => (
           <Motion.div
             key={project.id}
             className={project.lead ? "project-grid-item project-grid-item--lead" : "project-grid-item"}
@@ -22,7 +24,7 @@ export default function ProjectsPage() {
             viewport={{ once: true, amount: 0.12 }}
             transition={{ delay: (index % 2) * 0.08 }}
           >
-            <ProjectCard project={project} index={index} />
+            <ProjectCard project={project} />
           </Motion.div>
         ))}
       </div>

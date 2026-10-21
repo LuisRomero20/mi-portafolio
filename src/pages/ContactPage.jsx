@@ -32,8 +32,8 @@ export default function ContactPage() {
     <div className="section-shell section-block">
       <SectionIntro
         eyebrow="Contacto"
-        title="Hablemos de datos, automatización o sistemas de IA."
-        description="Si necesitas fortalecer una plataforma de datos, convertir un proceso manual en una solución medible o explorar una automatización con IA, conversemos."
+        title="¿Tienes un problema interesante por resolver?"
+        description="Hablemos de plataformas de datos, automatización, producto digital o sistemas de IA aplicada."
       />
 
       <div className="contact-layout">
@@ -45,7 +45,7 @@ export default function ContactPage() {
         >
           <div className="contact-panel__label">Canal directo</div>
           <a className="contact-email" href={`mailto:${profile.email}`}>
-            {profile.email}<ArrowUpRight />
+            Contáctame<ArrowUpRight />
           </a>
           <p>Respondo oportunidades profesionales, colaboraciones técnicas y conversaciones sobre productos de datos e IA aplicada.</p>
           <div className="contact-details">

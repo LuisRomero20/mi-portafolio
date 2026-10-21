@@ -1,21 +1,38 @@
-import { ArrowUpRight, Award, BookOpen, FileText } from "lucide-react";
+import { ArrowUpRight, Award, BookOpen, FileText, GraduationCap } from "lucide-react";
 import { motion as Motion } from "framer-motion";
 import ransomwareImg from "../assets/images/RasomwarePerfil.png";
 import SectionIntro from "../components/SectionIntro";
-import { certifications } from "../data/certifications";
+import { complementaryCredentials, principalCredentials } from "../data/certifications";
 
-const selectedIds = new Set([9, 1, 7, 5, 2, 10]);
+const credentialHref = (url) => (
+  url.startsWith("/") ? `${import.meta.env.BASE_URL}${url.slice(1)}` : url
+);
 
 export default function CertificationsPage() {
-  const selected = certifications.filter((certification) => selectedIds.has(certification.id));
-
   return (
     <div className="section-shell section-block">
       <SectionIntro
-        eyebrow="Formación e investigación"
-        title="Formación acreditada y credenciales con evidencia pública."
-        description="Incluye la acreditación internacional ABET de mi formación en la UPC, certificación AWS, especialización técnica, trabajo ágil e idiomas. Cada tarjeta abre su respaldo documental."
+        eyebrow="Formación"
+        title="Formación y credenciales verificables."
+        description="Una base académica en ingeniería, investigación publicada y aprendizaje continuo con respaldo documental."
       />
+
+      <Motion.article
+        className="education-card"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="education-card__icon"><GraduationCap aria-hidden="true" /></div>
+        <div>
+          <span>Universidad Peruana de Ciencias Aplicadas · 2020 — 2024</span>
+          <h3>Bachiller en Ingeniería de Sistemas de Información</h3>
+          <p>Programa acreditado por ABET, con formación en arquitectura de software, datos, analítica, gestión tecnológica e investigación aplicada.</p>
+        </div>
+        <a href={`${import.meta.env.BASE_URL}papers/Constancia de Bachiller.pdf`} target="_blank" rel="noreferrer">
+          Ver constancia <ArrowUpRight size={16} />
+        </a>
+      </Motion.article>
 
       <Motion.article
         className="research-feature"
@@ -47,15 +64,15 @@ export default function CertificationsPage() {
       </Motion.article>
 
       <div className="credentials-heading">
-        <div><Award aria-hidden="true" /><h3>Credenciales seleccionadas</h3></div>
-        <p>{selected.length} evidencias visibles de un expediente más amplio.</p>
+        <div><Award aria-hidden="true" /><h3>Credenciales principales</h3></div>
+        <p>Certificaciones y especializaciones con verificación pública o evidencia documental.</p>
       </div>
 
       <div className="credentials-grid">
-        {selected.map((certification, index) => (
+        {principalCredentials.map((certification, index) => (
           <Motion.a
             key={certification.id}
-            href={certification.credentialUrl.startsWith("/") ? `${import.meta.env.BASE_URL}${certification.credentialUrl.slice(1)}` : certification.credentialUrl}
+            href={credentialHref(certification.credentialUrl)}
             target="_blank"
             rel="noreferrer"
             className="credential-card"
@@ -74,6 +91,31 @@ export default function CertificationsPage() {
           </Motion.a>
         ))}
       </div>
+
+      <details className="complementary-credentials">
+        <summary>
+          <span>
+            <BookOpen aria-hidden="true" />
+            <span><strong>Formación complementaria</strong> Cursos que amplían la base en datos, software, agile, blockchain, diseño y productividad.</span>
+          </span>
+          <span>Explorar credenciales <ArrowUpRight aria-hidden="true" /></span>
+        </summary>
+        <div className="complementary-credentials__grid">
+          {complementaryCredentials.map((certification) => (
+            <a
+              key={certification.id}
+              href={credentialHref(certification.credentialUrl)}
+              target="_blank"
+              rel="noreferrer"
+              className="credential-row"
+            >
+              <span>{certification.category}</span>
+              <div><strong>{certification.title}</strong><small>{certification.issuer} · {certification.date}</small></div>
+              <ArrowUpRight aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+      </details>
     </div>
   );
 }

@@ -3,7 +3,6 @@ import { MotionConfig } from "framer-motion";
 import { HashRouter as Router, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import AboutPage from "./pages/AboutPage";
 import CertificationsPage from "./pages/CertificationsPage";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
@@ -12,7 +11,6 @@ import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import RecommendationsPage from "./pages/RecommendationsPage";
 import ResumePage from "./pages/ResumePage";
-import ServicesPage from "./pages/ServicesPage";
 import SkillsPage from "./pages/SkillsPage";
 import "./App.css";
 
@@ -31,15 +29,13 @@ function MainContent() {
   return (
     <main>
       <section id="home"><HomePage /></section>
-      <section id="about" className="section-surface"><AboutPage /></section>
-      <section id="services"><ServicesPage /></section>
-      <section id="projects" className="section-surface"><ProjectsPage /></section>
-      <section id="experience"><ResumePage /></section>
+      <section id="experience" className="section-surface"><ResumePage /></section>
+      <section id="projects"><ProjectsPage /></section>
       <section id="contexts" className="section-surface"><IndustryContextsPage /></section>
-      <section id="skills"><SkillsPage /></section>
       <section id="credentials"><CertificationsPage /></section>
-      <section id="recommendations" className="section-surface"><RecommendationsPage /></section>
-      <section id="contact"><ContactPage /></section>
+      <section id="skills" className="section-surface"><SkillsPage /></section>
+      <section id="recommendations"><RecommendationsPage /></section>
+      <section id="contact" className="section-surface"><ContactPage /></section>
     </main>
   );
 }

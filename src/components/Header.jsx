@@ -4,10 +4,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { id: "home", label: "Inicio" },
-  { id: "about", label: "Perfil" },
-  { id: "projects", label: "Proyectos" },
   { id: "experience", label: "Experiencia" },
-  { id: "contexts", label: "Entornos" },
+  { id: "projects", label: "Proyectos" },
+  { id: "credentials", label: "Formación" },
+  { id: "recommendations", label: "Reseñas" },
 ];
 
 export default function Header() {

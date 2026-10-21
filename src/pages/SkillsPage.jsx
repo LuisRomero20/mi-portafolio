@@ -1,55 +1,70 @@
-import { ArrowRight, BrainCircuit, ShieldCheck } from "lucide-react";
+import { createElement } from "react";
+import { BarChart3, Database, Workflow } from "lucide-react";
 import { motion as Motion } from "framer-motion";
+import {
+  SiApachespark,
+  SiBitbucket,
+  SiFlask,
+  SiGit,
+  SiGooglecloud,
+  SiPandas,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiSupabase,
+  SiTypescript,
+  SiVercel,
+} from "react-icons/si";
 import SectionIntro from "../components/SectionIntro";
-import { technologyGroups } from "../data/profile";
+
+const tools = [
+  { name: "Python", icon: SiPython },
+  { name: "SQL", icon: Database },
+  { name: "PySpark", icon: SiApachespark },
+  { name: "Pandas", icon: SiPandas },
+  { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "Google Cloud", icon: SiGooglecloud },
+  { name: "Power BI", icon: BarChart3 },
+  { name: "Flask", icon: SiFlask },
+  { name: "React", icon: SiReact },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "Supabase", icon: SiSupabase },
+  { name: "Vercel", icon: SiVercel },
+  { name: "Git", icon: SiGit },
+  { name: "Bitbucket", icon: SiBitbucket },
+  { name: "Control-M", icon: Workflow },
+];
+
+function ToolTrack({ hidden = false }) {
+  return (
+    <div className="tool-track" aria-hidden={hidden || undefined}>
+      {tools.map(({ name, icon }) => (
+        <div className="tool-logo" key={`${hidden ? "copy-" : ""}${name}`}>
+          {createElement(icon, { "aria-hidden": true })}
+          <span>{name}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function SkillsPage() {
   return (
     <div className="section-shell section-block section-block--compact">
       <SectionIntro
-        eyebrow="Stack técnico"
-        title="Herramientas elegidas por el problema y el nivel de riesgo."
-        description="El stack se agrupa por su papel en la solución. La profundidad está respaldada por experiencia y casos; las áreas de evolución se presentan como tales."
+        eyebrow="Capacidades"
+        title="Herramientas que me acompañan de principio a fin."
+        description="Un stack construido a lo largo de mi carrera para conectar datos, operación, producto y entrega."
       />
-
-      <div className="technology-board">
-        {technologyGroups.map((group, groupIndex) => (
-          <Motion.div
-            key={group.label}
-            className="technology-row"
-            initial={{ opacity: 0, x: -18 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: groupIndex * 0.08 }}
-          >
-            <h3>{group.label}</h3>
-            <div>
-              {group.items.map((item) => <span key={item}>{item}</span>)}
-            </div>
-          </Motion.div>
-        ))}
-      </div>
-
-      <Motion.aside
-        className="ai-direction-panel"
-        initial={{ opacity: 0, y: 20 }}
+      <Motion.div
+        className="tool-marquee"
+        initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="ai-direction-panel__icon"><BrainCircuit aria-hidden="true" /></div>
-        <div>
-          <p className="eyebrow">Evolución aplicada · AI Engineering</p>
-          <h3>IA sobre una base operable, observable y segura.</h3>
-          <p>
-            El foco de crecimiento está en RAG, memoria, agentes y automatización inteligente. Viernes funciona como laboratorio para diseñar permisos, trazabilidad y acciones con aprobación humana.
-          </p>
-        </div>
-        <div className="ai-direction-panel__path">
-          <span>Data foundations</span><ArrowRight aria-hidden="true" />
-          <span>AI systems</span><ArrowRight aria-hidden="true" />
-          <span><ShieldCheck aria-hidden="true" /> Human control</span>
-        </div>
-      </Motion.aside>
+        <ToolTrack />
+        <ToolTrack hidden />
+      </Motion.div>
     </div>
   );
 }
