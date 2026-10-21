@@ -13,6 +13,7 @@ import finanzas3 from "../assets/images/Finanzas3.png";
 import ransomwarePerfil from "../assets/images/RasomwarePerfil.png";
 import viernesImg from "../assets/images/viernes-ai-os.jpg";
 import laCaleraLogo from "../assets/brands/la-calera.png";
+import caleraPerfil from "../assets/images/CaleraPerfil.png";
 
 export const projects = [
   {
@@ -69,7 +70,7 @@ export const projects = [
       "VBScript / PyAutoGUI",
       "GitHub Actions CI",
     ],
-    image: laCaleraLogo,
+    image: caleraPerfil,
     accent: "cyan",
     github: "https://github.com/LuisRomero20/CaleraReport",
     demo: "https://calerareport-ten.vercel.app",
