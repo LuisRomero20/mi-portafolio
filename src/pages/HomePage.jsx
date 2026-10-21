@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { motion as Motion } from "framer-motion";
 import { SiGithub, SiLinkedin, SiWhatsapp } from "react-icons/si";
-import profileImg from "../assets/images/portrait-adventure.jpg";
+import profileImg from "../assets/images/portrait-adventure-900.jpg";
 import { profile } from "../data/profile";
 
 const reveal = {
@@ -65,8 +65,8 @@ export default function HomePage() {
             <img
               src={profileImg}
               alt="Luis Romero en un paisaje de montaña"
-              width="3762"
-              height="5906"
+              width="900"
+              height="1413"
               decoding="async"
               fetchPriority="high"
             />

@@ -64,7 +64,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <button className="brand-mark" onClick={() => goToSection("home")} aria-label="Ir al inicio">
+        <button className="brand-mark" onClick={() => goToSection("home")} aria-label="LR Luis Romero — ir al inicio">
           <span>LR</span>
           <span className="brand-mark__text">Luis Romero</span>
         </button>
