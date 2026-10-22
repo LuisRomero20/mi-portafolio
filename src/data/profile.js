@@ -1,14 +1,14 @@
 export const profile = {
   name: "Luis Jesús Romero Castro",
   shortName: "Luis Romero",
-  role: "Data Engineering · DataOps · Cloud · AI Applied",
+  role: "Data Engineering · Automation · Applied AI · Digital Solutions",
   location: "Lima, Perú",
   email: "luis_jesusrc@hotmail.com",
   phone: "+51907362779",
   phoneDisplay: "+51 907 362 779",
   headline: "Construyo sistemas de datos que las personas pueden entender y usar.",
   summary:
-    "Diseño plataformas de datos, automatizaciones y productos digitales que convierten procesos complejos en soluciones confiables, medibles y escalables.",
+    "Diseño e implemento soluciones tecnológicas que integran ingeniería de datos, automatización e inteligencia artificial aplicada. Desarrollo plataformas y sistemas inteligentes orientados a optimizar procesos, transformar información en decisiones estratégicas y generar soluciones confiables, eficientes y escalables.",
   links: {
     github: "https://github.com/LuisRomero20",
     linkedin: "https://www.linkedin.com/in/luisjesusromerocastro/",
@@ -47,13 +47,16 @@ export const experiences = [
     company: "Indra / Minsait",
     role: "Ingeniero de Datos Jr",
     period: "Mar. 2025 — Actualidad",
-    context: "Cliente: BBVA · Servicios para el sector financiero",
+    contextLines: [
+      "Cliente: BBVA",
+      "Área: Ingeniería, calidad y operación de datos",
+    ],
     summary:
-      "Confiabilidad batch, aseguramiento de calidad y gobierno del dato en un entorno regulado y de alta criticidad.",
+      "Ingeniería y continuidad operativa de procesos batch para un entorno financiero regulado, con foco en calidad, observabilidad y trazabilidad del dato.",
     highlights: [
-      "Análisis de causa raíz y remediación de flujos batch para sostener niveles de servicio.",
-      "Automatización en Python y Flask para visualizar dependencias y priorizar cuellos de botella.",
-      "Validaciones preventivas, certificación de pases y trazabilidad entre capas de datos.",
+      "Diagnóstico de causa raíz y remediación de flujos batch críticos para sostener la continuidad del servicio.",
+      "Desarrollo de automatizaciones en Python y Flask para visualizar dependencias, incidencias y cuellos de botella.",
+      "Ejecución de controles preventivos, certificación de pases y trazabilidad entre capas de procesamiento.",
     ],
     stack: ["Python", "PySpark", "Spark SQL", "Control-M", "Dataproc", "Bitbucket"],
     logo: "indra",
@@ -62,12 +65,16 @@ export const experiences = [
     company: "LINKEO",
     role: "Co-Founder & Lead Full-Stack",
     period: "Ago. 2025 — Actualidad",
-    context: "Emprendimiento propio · Producto digital",
+    contextLines: [
+      "Emprendimiento tecnológico propio",
+      "Producto digital: identidad NFC/QR y operación comercial",
+    ],
     summary:
-      "Dirección técnica de un ecosistema de identidad digital y operación comercial basado en NFC y QR.",
+      "Liderazgo técnico y de producto para una plataforma de identidad digital que conecta perfiles administrables, experiencias NFC/QR y herramientas de operación comercial.",
     highlights: [
-      "Arquitectura y despliegue de perfiles digitales editables listos para producción.",
-      "Diseño de herramientas internas para operación, trazabilidad y prospección comercial.",
+      "Arquitectura y despliegue de perfiles digitales editables con flujos preparados para producción.",
+      "Diseño de herramientas internas para administración, trazabilidad y prospección comercial.",
+      "Integración de una base operativa en Supabase y despliegues continuos sobre Vercel.",
     ],
     stack: ["React", "TypeScript", "Supabase", "Vercel", "NFC / QR"],
     logo: "linkeo",
@@ -76,13 +83,16 @@ export const experiences = [
     company: "RENOVA S.A.C.",
     role: "Soporte TI & Automatización de Datos",
     period: "Dic. 2023 — Feb. 2025",
-    context: "Operaciones para gran minería",
+    contextLines: [
+      "Tecnología y automatización para gran minería",
+      "Contextos: Quellaveco, Antamina, Yanacocha y Cerro Verde",
+    ],
     summary:
-      "Automatización de reportes, tableros operativos y soporte de infraestructura para operaciones industriales.",
+      "Soporte tecnológico, integración de información y automatización de reportes para operaciones vinculadas a cuatro clientes de gran minería.",
     highlights: [
-      "Scripts en Python y VBA para integrar información de producción e inventarios.",
-      "Dashboards en Power BI y SQL para seguimiento de KPI operacionales.",
-      "Gestión de incidencias y documentación técnica con Jira Service Management y Confluence.",
+      "Automatización con Python y VBA para consolidar información de producción, inventarios y mantenimiento.",
+      "Construcción de tableros en Power BI y consultas SQL para seguimiento de KPI operacionales.",
+      "Soporte de infraestructura, gestión de incidencias y documentación técnica con Jira y Confluence.",
     ],
     stack: ["Python", "SQL", "Power BI", "VBA", "Windows Server", "Jira"],
     logo: "renova",
@@ -91,9 +101,12 @@ export const experiences = [
     company: "2M MICON SAC",
     role: "Desarrollador Web Jr & Analítica",
     period: "Ene. 2023 — Oct. 2023",
-    context: "Experiencia digital",
+    contextLines: [
+      "Desarrollo web y analítica digital",
+      "Rendimiento, medición y experiencia de usuario",
+    ],
     summary:
-      "Optimización de una landing corporativa y creación de medición digital orientada a rendimiento y conversión.",
+      "Desarrollo y optimización de una experiencia web corporativa con medición digital orientada a rendimiento, accesibilidad y conversión.",
     highlights: [
       "Reducción reportada del 20% en tiempo de carga y mejora de accesibilidad técnica.",
       "Implementación de analítica web y seguimiento de objetivos comerciales.",
@@ -109,7 +122,7 @@ export const capabilityGroups = [
     eyebrow: "Datos confiables",
     description:
       "Pipelines ETL/ELT, ingesta incremental, procesamiento distribuido y modelos listos para consumo analítico.",
-    stack: ["Python", "SQL", "PySpark", "Spark SQL", "Pandas", "Dataproc"],
+    stack: ["Python", "SQL", "PySpark", "Spark SQL", "Pandas", "PostgreSQL", "Dataproc"],
     problem: "Conecto fuentes dispersas y convierto datos operativos en productos reproducibles y auditables.",
     projectId: "sales-etl",
   },
@@ -118,7 +131,7 @@ export const capabilityGroups = [
     eyebrow: "Operación observable",
     description:
       "Monitoreo de procesos críticos, análisis de causa raíz, mapeo de dependencias y automatización operativa.",
-    stack: ["Control-M", "Flask", "Bash", "PowerShell", "Git", "Bitbucket"],
+    stack: ["Control-M", "Flask", "Bash", "PowerShell", "Git", "Bitbucket", "Jira", "Confluence"],
     problem: "Reduzco trabajo manual y hago visibles los puntos de fallo antes de que afecten la operación.",
     projectId: "calera-report",
   },
@@ -127,7 +140,7 @@ export const capabilityGroups = [
     eyebrow: "Modelos con contexto",
     description:
       "Modelos predictivos, experimentación reproducible y sistemas de IA con permisos, trazabilidad y control humano.",
-    stack: ["scikit-learn", "Prophet", "Python", "SVM", "Random Forest", "Human-in-the-loop"],
+    stack: ["scikit-learn", "Prophet", "Python", "Pandas", "NumPy", "SVM", "Random Forest", "Human-in-the-loop"],
     problem: "Aplico modelos cuando mejoran una decisión concreta y documento sus límites, evidencia y estado real.",
     projectId: "viernes-ai-os",
   },
@@ -136,7 +149,7 @@ export const capabilityGroups = [
     eyebrow: "Producto digital",
     description:
       "Aplicaciones web, experiencias móviles e integraciones que conectan arquitectura, operación y necesidades comerciales.",
-    stack: ["React", "TypeScript", "Supabase", "Vercel", "Streamlit", "NFC / QR"],
+    stack: ["React", "TypeScript", "JavaScript", "Supabase", "Vercel", "Streamlit", "Notion", "NFC / QR"],
     problem: "Llevo una solución desde la idea hasta una experiencia que puede operarse, medirse y evolucionar.",
     projectId: "linkeo",
   },
@@ -149,10 +162,10 @@ export const technologyGroups = [
   },
   {
     label: "Operación",
-    items: ["Control-M", "Dataproc", "Bash", "PowerShell", "Git", "Bitbucket", "Jira"],
+    items: ["Control-M", "Dataproc", "Bash", "PowerShell", "Git", "Bitbucket", "Jira", "Confluence"],
   },
   {
     label: "Producto",
-    items: ["React 19", "TypeScript", "Supabase", "Vercel", "Streamlit", "Power BI"],
+    items: ["React 19", "TypeScript", "JavaScript", "Supabase", "Vercel", "Streamlit", "Power BI", "Notion"],
   },
 ];

@@ -1,8 +1,9 @@
 import { ArrowUpRight, Download } from "lucide-react";
 import { motion as Motion } from "framer-motion";
-import indraLogo from "../assets/images/Indra.jfif";
-import renovaLogo from "../assets/images/Renova.png";
-import miconLogo from "../assets/images/2micon.png";
+import indraLogo from "../assets/brands/transparent/indra-v2.png";
+import linkeoLogo from "../assets/brands/transparent/linkeo-v2.png";
+import miconLogo from "../assets/brands/transparent/micon-v2.png";
+import renovaLogo from "../assets/brands/transparent/renova-v2.png";
 import SectionIntro from "../components/SectionIntro";
 import { experiences, profile } from "../data/profile";
 
@@ -10,7 +11,7 @@ const logos = {
   indra: <img src={indraLogo} alt="Indra" />,
   renova: <img src={renovaLogo} alt="Renova" />,
   micon: <img src={miconLogo} alt="2M MICON" />,
-  linkeo: <span aria-hidden="true">L</span>,
+  linkeo: <img src={linkeoLogo} alt="LINKEO" />,
 };
 
 export default function ResumePage() {
@@ -43,7 +44,10 @@ export default function ResumePage() {
               <div className="experience-item__title">
                 <div>
                   <h3>{experience.role}</h3>
-                  <p>{experience.company} · {experience.context}</p>
+                  <p className="experience-item__context">
+                    <strong>{experience.company}</strong>
+                    {experience.contextLines.map((line) => <span key={line}>{line}</span>)}
+                  </p>
                 </div>
                 <span>{experience.period}</span>
               </div>

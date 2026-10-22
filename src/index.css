@@ -4458,3 +4458,387 @@ body {
     transition: none;
   }
 }
+
+/* Experience, industry relationships and learning carousel */
+.hero-role {
+  max-width: 760px;
+  color: #dbe7f4;
+  line-height: 1.6;
+}
+
+.hero-summary {
+  max-width: 760px;
+}
+
+.experience-item__logo {
+  overflow: visible;
+  border-color: rgba(148, 163, 184, 0.2);
+  background: linear-gradient(145deg, rgba(21, 33, 48, 0.94), rgba(8, 17, 29, 0.98));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055), 0 18px 38px rgba(0, 0, 0, 0.22);
+}
+
+.experience-item__logo img {
+  padding: 10px;
+  filter: drop-shadow(0 7px 8px rgba(0, 0, 0, 0.42));
+}
+
+.experience-item__logo--linkeo,
+.experience-item__logo--renova {
+  background: linear-gradient(145deg, rgba(24, 38, 54, 0.96), rgba(5, 11, 20, 0.98));
+}
+
+.experience-item__logo--indra img,
+.industry-brand-mark--indra img {
+  filter: brightness(1.42) saturate(0.88) drop-shadow(0 7px 8px rgba(0, 0, 0, 0.42));
+}
+
+.experience-item__logo--renova img {
+  width: 122%;
+  max-width: none;
+  padding: 2px;
+}
+
+.experience-item__logo--micon {
+  background: linear-gradient(145deg, rgba(84, 71, 29, 0.58), rgba(16, 22, 31, 0.98));
+}
+
+.experience-item__context {
+  display: grid;
+  gap: 4px;
+}
+
+.experience-item__context strong,
+.experience-item__context span {
+  display: block;
+}
+
+.experience-item__context strong {
+  margin-bottom: 2px;
+  color: #dbe7f3;
+  font-size: 0.78rem;
+}
+
+.experience-item__context span {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.company-logo {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(125, 211, 252, 0.1), transparent 60%),
+    linear-gradient(145deg, rgba(22, 35, 51, 0.96), rgba(7, 14, 25, 0.98));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055), 0 20px 48px rgba(0, 0, 0, 0.2);
+}
+
+.company-marquee {
+  width: 100%;
+  max-width: 100%;
+}
+
+.company-logo img {
+  max-width: 82%;
+  max-height: 76px;
+  filter: drop-shadow(0 8px 9px rgba(0, 0, 0, 0.44));
+}
+
+.company-logo--antamina img {
+  max-height: 84px;
+}
+
+.company-logo--cerro-verde img,
+.company-logo--yanacocha img,
+.company-logo--anglo-american img {
+  max-width: 88%;
+}
+
+.company-logo--micon {
+  background: linear-gradient(145deg, rgba(98, 81, 26, 0.54), rgba(10, 18, 29, 0.98));
+}
+
+.industry-context-grid {
+  align-items: stretch;
+  gap: 18px;
+}
+
+.industry-context-grid .industry-relationship-card {
+  display: flex;
+  min-height: 0;
+  padding: clamp(26px, 3.2vw, 40px);
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(94, 234, 212, 0.065), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.032), rgba(7, 14, 25, 0.86));
+}
+
+.industry-relationship-card--featured {
+  grid-column: 1 / -1;
+}
+
+.industry-relationship-card__company {
+  display: grid;
+  align-items: center;
+  gap: 22px;
+  grid-template-columns: 132px minmax(0, 1fr);
+}
+
+.industry-brand-mark {
+  display: grid;
+  width: 132px;
+  height: 88px;
+  place-items: center;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 17px;
+  background: linear-gradient(145deg, rgba(29, 43, 60, 0.9), rgba(8, 16, 27, 0.96));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055), 0 16px 34px rgba(0, 0, 0, 0.2);
+}
+
+.industry-brand-mark img {
+  max-width: 84%;
+  max-height: 68px;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 8px rgba(0, 0, 0, 0.42));
+}
+
+.industry-brand-mark--micon {
+  background: linear-gradient(145deg, rgba(98, 81, 26, 0.54), rgba(10, 18, 29, 0.98));
+}
+
+.industry-relationship-card__company p {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.industry-context-grid .industry-relationship-card__company h3 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.5vw, 2.05rem);
+}
+
+.industry-clients {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.industry-clients > span,
+.industry-engagement {
+  color: #9fb0c2;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.industry-clients__grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.industry-client {
+  display: grid;
+  min-height: 124px;
+  align-content: center;
+  justify-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.industry-client img {
+  width: auto;
+  max-width: 92%;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 8px rgba(0, 0, 0, 0.44));
+}
+
+.industry-client--antamina img {
+  height: 70px;
+}
+
+.industry-client strong {
+  color: #dbe6f0;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.industry-engagement {
+  margin: 28px 0 0 !important;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: #b7c6d6 !important;
+}
+
+.industry-relationship-card__detail {
+  display: grid;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 26px;
+}
+
+.industry-relationship-card--featured .industry-relationship-card__detail {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.industry-context-grid .industry-relationship-card__detail p {
+  margin: 0;
+}
+
+.credentials-heading__aside {
+  display: flex;
+  max-width: 560px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.credentials-heading__aside p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  text-align: right;
+}
+
+.credentials-scroll-controls {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.credentials-scroll-controls button {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.025);
+  cursor: pointer;
+}
+
+.credentials-scroll-controls button:hover,
+.credentials-scroll-controls button:focus-visible {
+  border-color: rgba(94, 234, 212, 0.55);
+  color: #061018;
+  background: var(--accent);
+}
+
+.credentials-scroll {
+  overflow-x: auto;
+  padding: 3px 3px 18px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: rgba(94, 234, 212, 0.52) rgba(148, 163, 184, 0.12);
+  scrollbar-width: thin;
+}
+
+.credentials-scroll:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.credentials-scroll .credentials-grid {
+  display: grid;
+  width: max-content;
+  grid-auto-columns: clamp(310px, 34vw, 410px);
+  grid-auto-flow: column;
+  grid-template-columns: none;
+}
+
+.credentials-scroll .credential-card {
+  min-height: 176px;
+  scroll-snap-align: start;
+}
+
+.tool-track {
+  animation-duration: 72s;
+}
+
+@media (max-width: 720px) {
+  .experience-item__title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .experience-item__title > span {
+    align-self: flex-start;
+  }
+
+  .industry-relationship-card--featured {
+    grid-column: auto;
+  }
+
+  .industry-relationship-card__company {
+    align-items: start;
+    grid-template-columns: 92px minmax(0, 1fr);
+  }
+
+  .industry-brand-mark {
+    width: 92px;
+    height: 72px;
+  }
+
+  .industry-relationship-card--featured .industry-relationship-card__detail {
+    grid-template-columns: 1fr;
+  }
+
+  .credentials-heading__aside {
+    width: 100%;
+    max-width: none;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .credentials-heading__aside p {
+    text-align: left;
+  }
+
+  .credentials-scroll .credentials-grid {
+    grid-auto-columns: minmax(280px, calc(100vw - 54px));
+  }
+}
+
+@media (max-width: 460px) {
+  .hero-role {
+    letter-spacing: 0.09em;
+  }
+
+  .industry-relationship-card__company {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-brand-mark {
+    width: 118px;
+    height: 78px;
+  }
+
+  .industry-clients__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credentials-heading__aside {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .credentials-scroll {
+    scroll-behavior: auto;
+  }
+
+  .tool-marquee,
+  .company-marquee {
+    width: 100%;
+    overflow-x: auto;
+  }
+}

@@ -1,26 +1,13 @@
-import { ArrowUpRight } from "lucide-react";
 import { motion as Motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import indraLogo from "../assets/images/Indra.jfif";
-import renovaLogo from "../assets/images/Renova.png";
-import miconLogo from "../assets/images/2micon.png";
 import SectionIntro from "../components/SectionIntro";
-import { industryContexts, industryGroups } from "../data/industryContexts";
-
-const companies = [
-  ...industryContexts.map(({ name, logo }) => ({ name, logo })),
-  { name: "Indra / Minsait", logo: indraLogo },
-  { name: "RENOVA", logo: renovaLogo },
-  { name: "2M MICON", logo: miconLogo },
-  { name: "LINKEO", monogram: "LINKEO" },
-];
+import { industryBrands, industryGroups } from "../data/industryContexts";
 
 function CompanyTrack({ hidden = false }) {
   return (
     <div className="company-track" aria-hidden={hidden || undefined}>
-      {companies.map((company) => (
-        <div className="company-logo" key={`${hidden ? "copy-" : ""}${company.name}`} role={hidden ? undefined : "img"} aria-label={hidden ? undefined : company.name}>
-          {company.logo ? <img src={company.logo} alt={hidden ? "" : company.name} loading="lazy" /> : <strong>{company.monogram}</strong>}
+      {industryBrands.map((company) => (
+        <div className={`company-logo company-logo--${company.logoClass}`} key={`${hidden ? "copy-" : ""}${company.name}`} role={hidden ? undefined : "img"} aria-label={hidden ? undefined : company.name}>
+          <img src={company.logo} alt={hidden ? "" : company.name} loading="lazy" />
         </div>
       ))}
     </div>
@@ -50,20 +37,43 @@ export default function IndustryContextsPage() {
       <div className="section-shell industry-context-grid">
         {industryGroups.map((group, index) => (
           <Motion.article
-            key={group.title}
+            className={`industry-relationship-card${group.featured ? " industry-relationship-card--featured" : ""}`}
+            key={group.company.name}
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ delay: index * 0.04 }}
           >
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <h3>{group.title}</h3>
-            <strong>{group.organizations}</strong>
-            <p>{group.relationship}</p>
-            <p>{group.contribution}</p>
-            {group.projectId ? (
-              <Link to={`/projects/${group.projectId}`}>Ver caso relacionado <ArrowUpRight size={16} /></Link>
-            ) : null}
+            <header className="industry-relationship-card__company">
+              <div className={`industry-brand-mark industry-brand-mark--${group.company.logoClass}`}>
+                <img src={group.company.logo} alt={group.company.name} loading="lazy" />
+              </div>
+              <div>
+                <p>{group.sector}</p>
+                <h3>{group.company.name}</h3>
+              </div>
+            </header>
+
+            {group.clients.length ? (
+              <div className="industry-clients">
+                <span>{group.clients.length === 1 ? "Cliente" : "Clientes vinculados"}</span>
+                <div className="industry-clients__grid">
+                  {group.clients.map((client) => (
+                    <div className={`industry-client industry-client--${client.logoClass}`} key={client.name}>
+                      <img src={client.logo} alt="" loading="lazy" />
+                      <strong>{client.name}</strong>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <p className="industry-engagement">{group.engagement}</p>
+            )}
+
+            <div className="industry-relationship-card__detail">
+              <p>{group.relationship}</p>
+              <p>{group.contribution}</p>
+            </div>
           </Motion.article>
         ))}
       </div>

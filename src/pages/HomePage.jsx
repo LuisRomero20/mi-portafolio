@@ -32,7 +32,7 @@ export default function HomePage() {
         >
           <Motion.p variants={reveal} className="hero-kicker">Hola, soy Luis Romero</Motion.p>
           <Motion.h1 variants={reveal}>{profile.headline}</Motion.h1>
-          <Motion.p variants={reveal} className="hero-role">Data Engineer · Automation Builder · Product Mindset</Motion.p>
+          <Motion.p variants={reveal} className="hero-role">{profile.role}</Motion.p>
           <Motion.p variants={reveal} className="hero-summary">{profile.summary}</Motion.p>
           <Motion.div variants={reveal} className="hero-actions">
             <button className="button-primary" onClick={() => scrollTo("projects")}>
