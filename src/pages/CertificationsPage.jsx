@@ -1,7 +1,6 @@
-import { useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Award, BookOpen, FileText, GraduationCap } from "lucide-react";
+import { useMemo, useState } from "react";
+import { ArrowUpRight, Award, BookOpen, FileText, GraduationCap } from "lucide-react";
 import { motion as Motion } from "framer-motion";
-import ransomwareImg from "../assets/images/RasomwarePerfil.png";
 import SectionIntro from "../components/SectionIntro";
 import { complementaryCredentials, principalCredentials, programAccreditation } from "../data/certifications";
 
@@ -10,7 +9,6 @@ const credentialHref = (url) => (
 );
 
 export default function CertificationsPage() {
-  const credentialsRef = useRef(null);
   const filters = ["Todos", "Datos", "Software", "Agile", "Diseño y producto", "Otros"];
   const [activeFilter, setActiveFilter] = useState("Todos");
   const filteredCredentials = useMemo(() => {
@@ -27,11 +25,7 @@ export default function CertificationsPage() {
     return complementaryCredentials.filter((credential) => categoryMap[activeFilter]?.includes(credential.category));
   }, [activeFilter]);
 
-  const scrollCredentials = (direction) => {
-    const container = credentialsRef.current;
-    if (!container) return;
-    container.scrollBy({ left: direction * Math.min(container.clientWidth * 0.82, 460), behavior: "smooth" });
-  };
+  const researchPdf = `${import.meta.env.BASE_URL}papers/ransomware.pdf#view=FitH&toolbar=1&navpanes=0`;
 
   return (
     <div className="section-shell section-block">
@@ -67,8 +61,12 @@ export default function CertificationsPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="research-feature__image">
-          <img src={ransomwareImg} alt="Portada de la investigación sobre machine learning y ransomware" loading="lazy" />
+        <div className="research-feature__document">
+          <iframe
+            src={researchPdf}
+            title="Artículo científico sobre detección de ransomware con machine learning"
+            loading="lazy"
+          />
         </div>
         <div className="research-feature__copy">
           <p className="eyebrow">Publicación científica · IJACSA 2024</p>
@@ -92,43 +90,31 @@ export default function CertificationsPage() {
 
       <div className="credentials-heading">
         <div><Award aria-hidden="true" /><h3>Credenciales principales</h3></div>
-        <div className="credentials-heading__aside">
-          <p>Certificaciones y especializaciones con verificación pública o evidencia documental.</p>
-          <div className="credentials-scroll-controls" aria-label="Controles de credenciales principales">
-            <button type="button" onClick={() => scrollCredentials(-1)} aria-label="Ver credenciales anteriores">
-              <ArrowLeft aria-hidden="true" />
-            </button>
-            <button type="button" onClick={() => scrollCredentials(1)} aria-label="Ver credenciales siguientes">
-              <ArrowRight aria-hidden="true" />
-            </button>
-          </div>
-        </div>
+        <p>Certificaciones y especializaciones con verificación pública o evidencia documental.</p>
       </div>
 
-      <div className="credentials-scroll" ref={credentialsRef} role="region" aria-label="Credenciales principales desplazables" tabIndex="0">
-        <div className="credentials-grid">
-          {principalCredentials.map((certification, index) => (
-            <Motion.a
-              key={certification.id}
-              href={credentialHref(certification.credentialUrl)}
-              target="_blank"
-              rel="noreferrer"
-              className="credential-card"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (index % 3) * 0.05 }}
-            >
-              <BookOpen aria-hidden="true" />
-              <div>
-                <span>{certification.category}</span>
-                <h4>{certification.title}</h4>
-                <p>{certification.issuer} · {certification.date}</p>
-              </div>
-              <ArrowUpRight aria-hidden="true" />
-            </Motion.a>
-          ))}
-        </div>
+      <div className="credentials-grid">
+        {principalCredentials.map((certification, index) => (
+          <Motion.a
+            key={certification.id}
+            href={credentialHref(certification.credentialUrl)}
+            target="_blank"
+            rel="noreferrer"
+            className="credential-card"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: (index % 3) * 0.05 }}
+          >
+            <BookOpen aria-hidden="true" />
+            <div>
+              <span>{certification.category}</span>
+              <h4>{certification.title}</h4>
+              <p>{certification.issuer} · {certification.date}</p>
+            </div>
+            <ArrowUpRight aria-hidden="true" />
+          </Motion.a>
+        ))}
       </div>
 
       <details className="complementary-credentials">

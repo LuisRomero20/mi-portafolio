@@ -4671,16 +4671,22 @@ body {
 }
 
 .industry-engagement {
-  margin: 28px 0 0 !important;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
+  display: flex;
+  min-height: 124px;
+  align-items: center;
+  margin: 30px 0 0 !important;
+  padding: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.018);
   color: #b7c6d6 !important;
+  line-height: 1.55;
 }
 
 .industry-relationship-card__detail {
   display: grid;
   gap: 14px;
-  margin-top: auto;
+  margin-top: 0;
   padding-top: 26px;
 }
 
@@ -4690,74 +4696,6 @@ body {
 
 .industry-context-grid .industry-relationship-card__detail p {
   margin: 0;
-}
-
-.credentials-heading__aside {
-  display: flex;
-  max-width: 560px;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 20px;
-}
-
-.credentials-heading__aside p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.8rem;
-  line-height: 1.55;
-  text-align: right;
-}
-
-.credentials-scroll-controls {
-  display: flex;
-  flex: 0 0 auto;
-  gap: 8px;
-}
-
-.credentials-scroll-controls button {
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.025);
-  cursor: pointer;
-}
-
-.credentials-scroll-controls button:hover,
-.credentials-scroll-controls button:focus-visible {
-  border-color: rgba(94, 234, 212, 0.55);
-  color: #061018;
-  background: var(--accent);
-}
-
-.credentials-scroll {
-  overflow-x: auto;
-  padding: 3px 3px 18px;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  scrollbar-color: rgba(94, 234, 212, 0.52) rgba(148, 163, 184, 0.12);
-  scrollbar-width: thin;
-}
-
-.credentials-scroll:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 5px;
-}
-
-.credentials-scroll .credentials-grid {
-  display: grid;
-  width: max-content;
-  grid-auto-columns: clamp(310px, 34vw, 410px);
-  grid-auto-flow: column;
-  grid-template-columns: none;
-}
-
-.credentials-scroll .credential-card {
-  min-height: 176px;
-  scroll-snap-align: start;
 }
 
 .tool-track {
@@ -4792,20 +4730,6 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .credentials-heading__aside {
-    width: 100%;
-    max-width: none;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  .credentials-heading__aside p {
-    text-align: left;
-  }
-
-  .credentials-scroll .credentials-grid {
-    grid-auto-columns: minmax(280px, calc(100vw - 54px));
-  }
 }
 
 @media (max-width: 460px) {
@@ -4826,19 +4750,153 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .credentials-heading__aside {
-    flex-direction: column;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .credentials-scroll {
-    scroll-behavior: auto;
-  }
-
   .tool-marquee,
   .company-marquee {
     width: 100%;
     overflow-x: auto;
+  }
+}
+
+/* Layout corrections: balanced industries and embedded research document */
+.hero-summary {
+  text-align: justify;
+  text-wrap: pretty;
+}
+
+.experience-item {
+  grid-template-columns: 124px minmax(0, 1fr);
+}
+
+.experience-item__logo {
+  width: 124px;
+  height: 76px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.experience-item__logo img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.experience-item__logo--renova img {
+  width: 100%;
+  max-width: 100%;
+  padding: 8px 5px;
+}
+
+.company-section__intro .section-intro {
+  margin-right: auto;
+  margin-bottom: 46px;
+  margin-left: auto;
+}
+
+.company-section__intro .section-intro__content h2,
+.company-section__intro .section-intro__description {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.company-section .company-marquee {
+  margin-block: 0 18px;
+}
+
+.company-note {
+  margin-top: 0;
+  text-align: center;
+}
+
+.industry-context-grid {
+  margin-top: 38px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.industry-context-grid .industry-relationship-card {
+  grid-column: auto;
+}
+
+.industry-context-grid .industry-relationship-card--featured {
+  order: -1;
+  grid-column: 1 / -1;
+}
+
+.research-feature {
+  min-height: 720px;
+  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
+}
+
+.research-feature__document {
+  min-height: 720px;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background: #eef2f6;
+}
+
+.research-feature__document iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 720px;
+  border: 0;
+  background: #eef2f6;
+}
+
+.research-feature__copy {
+  padding: clamp(38px, 4.2vw, 62px);
+}
+
+@media (max-width: 920px) {
+  .experience-item {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+
+  .experience-item__logo {
+    width: 112px;
+    height: 72px;
+  }
+
+  .research-feature {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .research-feature__document,
+  .research-feature__document iframe {
+    min-height: 620px;
+  }
+
+  .research-feature__document {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 620px) {
+  .experience-item {
+    gap: 16px;
+    grid-template-columns: 92px minmax(0, 1fr);
+  }
+
+  .experience-item__logo {
+    width: 92px;
+    height: 64px;
+  }
+
+  .industry-context-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-context-grid .industry-relationship-card--featured {
+    grid-column: auto;
+  }
+
+  .research-feature__document,
+  .research-feature__document iframe {
+    min-height: 500px;
   }
 }
