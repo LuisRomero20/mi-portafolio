@@ -85,7 +85,7 @@ export const experiences = [
     period: "Dic. 2023 — Feb. 2025",
     contextLines: [
       "Tecnología y automatización para gran minería",
-      "Contextos: Quellaveco, Antamina, Yanacocha y Cerro Verde",
+      "Clientes: Anglo American Quellaveco, Antamina, Yanacocha y Cerro Verde",
     ],
     summary:
       "Soporte tecnológico, integración de información y automatización de reportes para operaciones vinculadas a cuatro clientes de gran minería.",

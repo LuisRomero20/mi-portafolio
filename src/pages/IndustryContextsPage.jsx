@@ -17,12 +17,13 @@ function CompanyTrack({ hidden = false }) {
 export default function IndustryContextsPage() {
   return (
     <div className="section-block company-section">
-      <div className="section-shell">
-      <SectionIntro
-        eyebrow="Experiencia por industrias"
-        title="Diseño para contextos donde la operación importa."
-        description="Las marcas identifican una relación laboral, un cliente atendido desde un empleador o un proyecto documentado; cada caso aclara el vínculo real."
-      />
+      <div className="section-shell company-section__intro">
+        <SectionIntro
+          eyebrow="Experiencia por industrias"
+          title="Diseño para contextos donde la operación importa."
+          description="Las marcas identifican una relación laboral, un cliente atendido desde un empleador o un proyecto documentado; cada caso aclara el vínculo real."
+          align="center"
+        />
       </div>
       <Motion.div
         className="company-marquee"

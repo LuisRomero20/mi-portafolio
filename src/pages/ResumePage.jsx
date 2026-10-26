@@ -31,7 +31,7 @@ export default function ResumePage() {
       <div className="experience-list">
         {experiences.map((experience) => (
           <Motion.article
-            className="experience-item"
+            className={`experience-item experience-item--${experience.logo}`}
             key={`${experience.company}-${experience.role}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
